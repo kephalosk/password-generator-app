@@ -1,6 +1,6 @@
 {
-  "name": "tip-calculator-app-react",
-  "homepage": "https://kephalosk.github.io/tip-calculator-app-react",
+  "name": "password-generator-app",
+  "homepage": "https://kephalosk.github.io/password-generator-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",

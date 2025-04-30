@@ -1,6 +1,6 @@
 # Frontend Mentor - Time tracking dashboard solution
 
-This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Password generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 To run this project:
 
@@ -38,8 +38,8 @@ Active
 
 ### Links
 
-- Solution URL: [GitHub Repo](https://github.com/kephalosk/tip-calculator-app-react )
-- Live Site URL: [GitHub Pages](https://kephalosk.github.io/tip-calculator-app-react )
+- Solution URL: [GitHub Repo](https://github.com/kephalosk/password-generator-app )
+- Live Site URL: [GitHub Pages](https://kephalosk.github.io/password-generator-app )
 
 ## Coverage
 

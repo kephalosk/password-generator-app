@@ -9,7 +9,6 @@
 .pnp.js
 yarn.debug.log*
 yarn.error.log*
-npm-debug.log*
 
 # Environment and secrets
 .env
@@ -34,9 +33,7 @@ npm-debug.log*
 *.swo
 
 # Misc
-*.log
 *.pem
-.DS_Store
 Thumbs.db
 
 
@@ -65,5 +62,4 @@ dist-ssr
 *.sln
 *.sw?
 
-.idea
 coverage
