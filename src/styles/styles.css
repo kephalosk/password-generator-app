@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  opacity: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2.5rem;
+}
+@media (min-width: 47.5rem) {
+  .app {
+    row-gap: 5rem;
+  }
+}
+
+.appIcon {
+  height: 3.5rem;
+  width: 5.625rem;
+}
+
+.attribution {
+  margin-top: 0.75rem;
+  text-align: center;
+  color: hsl(183, 100%, 15%);
+  font-family: "Space Mono", sans-serif;
+  font-weight: bold;
+  font-size: clamp(0.75rem, 0.45rem + 0.6vw, 1.5rem);
+  line-height: clamp(1.1875rem, 0.7125rem + 0.6vw, 2.375rem);
+  letter-spacing: 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 40%);
+}
+
+/*# sourceMappingURL=styles.css.map */

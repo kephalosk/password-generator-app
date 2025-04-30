@@ -1,0 +1,63 @@
+@use '../../../styles/colors';
+@use '../../../styles/fonts';
+@use '../../../styles/spaces';
+
+.errorLabel {
+  padding-bottom: spaces.$space-6px;
+  display: flex;
+  width: 100%;
+  text-align: right;
+  color: colors.$red;
+}
+
+.headlineLabel {
+  padding-bottom: spaces.$space-6px;
+  display: flex;
+  width: 100%;
+  text-align: left;
+  color: colors.$grey-500;
+}
+
+.label {
+  width: 100%;
+  display: inline-block;
+
+  @include fonts.text-preset-4;
+}
+
+.priceLabel {
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  text-align: right;
+  color: colors.$green-400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include fonts.text-preset-1;
+}
+
+.priceSectionDivisorLabel {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: colors.$grey-200;
+
+  @include fonts.text-preset-5;
+}
+
+.priceSectionLabel {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  color: colors.$white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include fonts.text-preset-4;
+}

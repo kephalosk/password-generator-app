@@ -1,0 +1,9 @@
+@use 'functions';
+
+$phone-width: functions.to-rem(760px);
+
+@mixin tablet-and-up {
+  @media (min-width: $phone-width) {
+    @content
+  }
+}

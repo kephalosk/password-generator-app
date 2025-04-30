@@ -1,0 +1,25 @@
+@use '../../../styles/functions';
+@use '../../../styles/spaces';
+
+.peopleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.peopleContainerInput {
+  position: relative;
+}
+
+.peopleContainerHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.peopleContainerInputIcon {
+  position: absolute;
+  left: spaces.$space-16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
