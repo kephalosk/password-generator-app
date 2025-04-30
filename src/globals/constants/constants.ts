@@ -1,3 +1,15 @@
+export const PASSWORD_PLACEHOLDER_LABEL_TEXT: string = "P4$5W0rD!";
+export const ZERO_LABEL_TEXT: string = "0";
+
+export const HEADLINE_TEXT: string = "Password Generator";
+
+export const EMPTY_CHECKBOX_LABEL_TEXT: string = "Empty Checkbox Label";
+export const EMPTY_HEADER_LABEL_TEXT: string = "Empty Header Label";
+export const EMPTY_LABEL_TEXT: string = "Empty Label";
+export const EMPTY_NUMBER_LABEL_TEXT: string = "Empty Number Label";
+export const EMPTY_PASSWORD_LABEL_TEXT: string = "Empty Password Label";
+export const EMPTY_UPPERCASE_LABEL_TEXT: string = "Empty Uppercase Label";
+
 export const BILL_ICON_ALT_TEXT: string = "Dollar Icon for Input Field";
 export const BILL_INPUT_ID: string = "billInput";
 export const BILL_INPUT_NAME: string = "Bill Input";
@@ -31,14 +43,8 @@ export const TIP_INPUT_PLACEHOLDER: string = "Custom";
 
 export const EMPTY_PRICE_DECIMAL_STRING: string = "0.00";
 export const EMPTY_STRING: string = "";
-export const EMPTY_ERROR_LABEL_TEXT: string = "Empty Error Label";
-export const EMPTY_HEADLINE_LABEL_TEXT: string = "Empty Headline Label";
-export const EMPTY_LABEL_TEXT: string = "Empty Label";
-export const EMPTY_PRICE_LABEL_TEXT: string = "Empty Price Label";
 export const EMPTY_PRICE_SECTION_DEVISOR_LABEL_TEXT: string =
   "Empty Price Section Devisor Label";
-export const EMPTY_PRICE_SECTION_LABEL_TEXT: string =
-  "Empty Price Section Label";
 export const EMPTY_TEXT_WARNING_MESSAGE: string = "Label text is empty!";
 
 export const INPUT_ARIA_LABEL_PREFIX: string = "Input field for ";

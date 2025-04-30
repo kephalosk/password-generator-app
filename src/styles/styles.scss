@@ -26,16 +26,10 @@ h1 {
   opacity: 0;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: spaces.$space-40px;
-
-  @include screens.tablet-and-up{
-    row-gap: spaces.$space-80px;
-  }
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 
 .appIcon {
@@ -46,7 +40,7 @@ h1 {
 .attribution {
   margin-top: spaces.$space-12px;
   text-align: center;
-  color: colors.$green-900;
+  color: colors.$white;
 
   @include fonts.text-preset-5;
 }

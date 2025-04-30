@@ -1,8 +1,8 @@
 export enum LabelTypeEnum {
   LABEL = "label",
-  PRICE_LABEL = "priceLabel",
-  PRICE_SECTION_DIVISOR_LABEL = "priceSectionDivisorLabel",
-  PRICE_SECTION_LABEL = "priceSectionLabel",
-  ERROR_LABEL = "errorLabel",
-  HEADLINE_LABEL = "headlineLabel",
+  PASSWORD_LABEL = "passwordLabel",
+  HEADER_LABEL = "headerLabel",
+  NUMBER_LABEL = "numberLabel",
+  CHECKBOX_LABEL = "checkboxLabel",
+  UPPERCASE_LABEL = "uppercaseLabel",
 }

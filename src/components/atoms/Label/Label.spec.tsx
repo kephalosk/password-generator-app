@@ -28,7 +28,7 @@ jest.mock(
 );
 
 describe("Label Component", (): void => {
-  const type: LabelTypeEnum = LabelTypeEnum.PRICE_LABEL;
+  const type: LabelTypeEnum = LabelTypeEnum.PASSWORD_LABEL;
   const text: string = "test";
 
   const setup = (propsOverride?: Partial<LabelProps>) => {
@@ -51,7 +51,7 @@ describe("Label Component", (): void => {
     renderedText,
   };
 
-  beforeEach(() => {
+  beforeEach((): void => {
     (useLabelType as jest.Mock).mockReturnValue(useLabelTypeMock);
     (useWarnIfEmptyText as jest.Mock).mockReturnValue(undefined);
   });
@@ -72,6 +72,13 @@ describe("Label Component", (): void => {
 
     expect(useLabelType).toHaveBeenCalledWith(type, EMPTY_STRING);
     expect(useWarnIfEmptyText).toHaveBeenCalledWith(EMPTY_STRING);
+  });
+
+  it("sets the default type if prop type is undefined", (): void => {
+    setup({ type: undefined });
+
+    expect(useLabelType).toHaveBeenCalledWith(LabelTypeEnum.LABEL, text);
+    expect(useWarnIfEmptyText).toHaveBeenCalledWith(text);
   });
 
   it("calls hook useLabelType", (): void => {

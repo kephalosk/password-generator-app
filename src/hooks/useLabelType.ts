@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
 import {
-  EMPTY_ERROR_LABEL_TEXT,
-  EMPTY_HEADLINE_LABEL_TEXT,
+  EMPTY_CHECKBOX_LABEL_TEXT,
+  EMPTY_HEADER_LABEL_TEXT,
+  EMPTY_UPPERCASE_LABEL_TEXT,
   EMPTY_LABEL_TEXT,
-  EMPTY_PRICE_DECIMAL_STRING,
-  EMPTY_PRICE_LABEL_TEXT,
-  EMPTY_PRICE_SECTION_DEVISOR_LABEL_TEXT,
-  EMPTY_PRICE_SECTION_LABEL_TEXT,
+  EMPTY_PASSWORD_LABEL_TEXT,
+  EMPTY_NUMBER_LABEL_TEXT,
   EMPTY_STRING,
-  PRICE_SECTION_DEVISOR_PREFIX,
+  PASSWORD_PLACEHOLDER_LABEL_TEXT,
+  ZERO_LABEL_TEXT,
 } from "@/globals/constants/constants.ts";
 
 const useLabelType = (
@@ -20,20 +20,16 @@ const useLabelType = (
     switch (type) {
       case LabelTypeEnum.LABEL:
         return text === EMPTY_STRING ? EMPTY_LABEL_TEXT : text;
-      case LabelTypeEnum.PRICE_LABEL:
-        return text === EMPTY_PRICE_DECIMAL_STRING
-          ? EMPTY_PRICE_LABEL_TEXT
-          : `$${text}`;
-      case LabelTypeEnum.PRICE_SECTION_DIVISOR_LABEL:
-        return text === EMPTY_STRING
-          ? EMPTY_PRICE_SECTION_DEVISOR_LABEL_TEXT
-          : `${PRICE_SECTION_DEVISOR_PREFIX} ${text}`;
-      case LabelTypeEnum.PRICE_SECTION_LABEL:
-        return text === EMPTY_STRING ? EMPTY_PRICE_SECTION_LABEL_TEXT : text;
-      case LabelTypeEnum.ERROR_LABEL:
-        return text === EMPTY_STRING ? EMPTY_ERROR_LABEL_TEXT : text;
-      case LabelTypeEnum.HEADLINE_LABEL:
-        return text === EMPTY_STRING ? EMPTY_HEADLINE_LABEL_TEXT : text;
+      case LabelTypeEnum.PASSWORD_LABEL:
+        return text === EMPTY_STRING ? EMPTY_PASSWORD_LABEL_TEXT : text;
+      case LabelTypeEnum.HEADER_LABEL:
+        return text === EMPTY_STRING ? EMPTY_HEADER_LABEL_TEXT : text;
+      case LabelTypeEnum.NUMBER_LABEL:
+        return text === EMPTY_STRING ? EMPTY_NUMBER_LABEL_TEXT : text;
+      case LabelTypeEnum.CHECKBOX_LABEL:
+        return text === EMPTY_STRING ? EMPTY_CHECKBOX_LABEL_TEXT : text;
+      case LabelTypeEnum.UPPERCASE_LABEL:
+        return text === EMPTY_STRING ? EMPTY_UPPERCASE_LABEL_TEXT : text;
       default:
         return text === EMPTY_STRING ? EMPTY_LABEL_TEXT : text;
     }
@@ -43,15 +39,15 @@ const useLabelType = (
     switch (type) {
       case LabelTypeEnum.LABEL:
         return text;
-      case LabelTypeEnum.PRICE_LABEL:
-        return `$${text}`;
-      case LabelTypeEnum.PRICE_SECTION_DIVISOR_LABEL:
-        return `${PRICE_SECTION_DEVISOR_PREFIX} ${text}`;
-      case LabelTypeEnum.PRICE_SECTION_LABEL:
+      case LabelTypeEnum.PASSWORD_LABEL:
+        return text === EMPTY_STRING ? PASSWORD_PLACEHOLDER_LABEL_TEXT : text;
+      case LabelTypeEnum.HEADER_LABEL:
         return text;
-      case LabelTypeEnum.ERROR_LABEL:
+      case LabelTypeEnum.NUMBER_LABEL:
+        return text === EMPTY_STRING ? ZERO_LABEL_TEXT : text;
+      case LabelTypeEnum.CHECKBOX_LABEL:
         return text;
-      case LabelTypeEnum.HEADLINE_LABEL:
+      case LabelTypeEnum.UPPERCASE_LABEL:
         return text;
       default:
         return text;
