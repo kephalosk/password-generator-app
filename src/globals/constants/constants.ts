@@ -8,6 +8,8 @@ export const EMPTY_HEADER_LABEL_TEXT: string = "Empty Header Label";
 export const EMPTY_LABEL_TEXT: string = "Empty Label";
 export const EMPTY_NUMBER_LABEL_TEXT: string = "Empty Number Label";
 export const EMPTY_PASSWORD_LABEL_TEXT: string = "Empty Password Label";
+export const EMPTY_STRENGTH_BEAM_LABEL_TEXT: string =
+  "Empty Strength Beam Label";
 export const EMPTY_UPPERCASE_LABEL_TEXT: string = "Empty Uppercase Label";
 
 export const BILL_ICON_ALT_TEXT: string = "Dollar Icon for Input Field";
