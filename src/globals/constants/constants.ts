@@ -12,6 +12,8 @@ export const EMPTY_STRENGTH_BEAM_LABEL_TEXT: string =
   "Empty Strength Beam Label";
 export const EMPTY_UPPERCASE_LABEL_TEXT: string = "Empty Uppercase Label";
 
+export const CHECKBOX_ICON_ALT_TEXT: string = "Checkmark for Checkbox Field";
+
 export const BILL_ICON_ALT_TEXT: string = "Dollar Icon for Input Field";
 export const BILL_INPUT_ID: string = "billInput";
 export const BILL_INPUT_NAME: string = "Bill Input";
