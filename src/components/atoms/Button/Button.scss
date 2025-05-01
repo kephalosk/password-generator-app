@@ -7,42 +7,44 @@ $border-thickness: functions.to-rem(1px);
 $transition-duration: 0.2s;
 
 .button {
-  border: $border-thickness solid colors.$green-400;
+  border: $border-thickness solid colors.$green-200;
   padding: spaces.$space-8px spaces.$space-16px ;
   width: 100%;
-  border-radius: spaces.$radius-5px;
-  background-color: colors.$green-400;
+  background-color: colors.$green-200;
   text-transform: uppercase;
-  color: colors.$green-1000;
+  color: colors.$grey-800;
   outline: none;
   box-shadow: none;
   transition:
           border $transition-duration ease,
           background-color $transition-duration ease;
 
-  @include fonts.text-preset-3;
+  @include fonts.text-preset-4;
 }
 .button:hover {
   border: $border-thickness solid colors.$green-200;
   background-color: colors.$green-200;
+  color: colors.$grey-800;
   outline: none;
   box-shadow: none;
 }
 .button:focus {
   border: $border-thickness solid colors.$green-200;
   background-color: colors.$green-200;
+  color: colors.$grey-800;
   outline: none;
   box-shadow: none;
 }
 .button:focus-visible {
-  border: $border-thickness solid colors.$white;
+  border: $border-thickness solid colors.$green-200;
   background-color: colors.$green-200;
+  color: colors.$grey-800;
   outline: none;
   box-shadow: none;
 }
 
 .button.disabled {
-  border: $border-thickness solid colors.$green-600;
-  background-color: colors.$green-600;
+  border: $border-thickness solid colors.$grey-600;
+  background-color: colors.$grey-600;
   cursor: not-allowed;
 }
