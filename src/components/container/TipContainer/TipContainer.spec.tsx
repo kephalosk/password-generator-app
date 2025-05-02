@@ -3,7 +3,7 @@ import TipContainer from "./TipContainer";
 import useTipItems from "@/hooks/redux/useTipItems.ts";
 import useInputValue from "@/hooks/redux/useInputValue.ts";
 import { TipItem, TipItems } from "@/globals/constants/TipItems.ts";
-import Input from "@/components/atoms/Input/Input.tsx";
+import Input from "@/components/atoms/archive/Input/Input.tsx";
 import TipFieldLabel from "@/components/atoms/TipFieldLabel/TipFieldLabel.tsx";
 import React, { ReactNode } from "react";
 import {
@@ -43,7 +43,7 @@ jest.mock(
 
 const inputTestId: string = "input";
 jest.mock(
-  "@/components/atoms/Input/Input",
+  "@/components/atoms/archive/Input/Input",
   (): jest.Mock =>
     jest.fn((props) => (
       <input

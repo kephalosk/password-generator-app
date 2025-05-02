@@ -1,6 +1,6 @@
 import "./BillContainer.scss";
 import React, { ReactElement } from "react";
-import Input, { InputProps } from "@/components/atoms/Input/Input.tsx";
+import Input, { InputProps } from "@/components/atoms/archive/Input/Input.tsx";
 import {
   BILL_ICON_ALT_TEXT,
   BILL_INPUT_ID,

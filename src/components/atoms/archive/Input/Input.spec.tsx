@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import Input, { InputProps } from "./Input";
+import Input, { InputProps } from "./Input.tsx";
 import useCursorPositionInCaseOfPercentage from "@/hooks/useCursorPositionInCaseOfPercentage.ts";
 import useControlledNumericInput from "@/hooks/useControlledNumericInput.ts";
 import useInputReset from "@/hooks/redux/useInputReset.ts";
@@ -10,7 +10,7 @@ import {
 } from "@/globals/constants/constants.ts";
 
 jest.mock(
-  "@/hooks/useControlledNumericInput",
+  "@/hooks/useControlledNumericInput.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;
@@ -21,7 +21,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useCursorPositionInCaseOfPercentage",
+  "@/hooks/useCursorPositionInCaseOfPercentage.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;

@@ -1,4 +1,4 @@
-import calculateTotalAndTip from "@/globals/helper/calculateTotalAndTip.ts";
+import calculateTotalAndTip from "@/globals/helper/archive/calculateTotalAndTip.ts";
 import {
   CALCULATE_TOTAL_AND_TIP_ERROR_MESSAGE,
   EMPTY_PRICE_DECIMAL_STRING,

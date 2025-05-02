@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
-import calculateTotalAndTip from "@/globals/helper/calculateTotalAndTip.ts";
+import calculateTotalAndTip from "@/globals/helper/archive/calculateTotalAndTip.ts";
 import { EMPTY_STRING } from "@/globals/constants/constants.ts";
 
 export const selectTipValueResult = (state: RootState) => state.tip.value;

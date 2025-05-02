@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Input from "@/components/atoms/Input/Input.tsx";
+import Input from "@/components/atoms/archive/Input/Input.tsx";
 import React, { ReactNode } from "react";
 import PeopleContainer from "@/components/container/PeopleContainer/PeopleContainer.tsx";
 import {
@@ -31,7 +31,7 @@ jest.mock(
 
 const inputTestId: string = "input";
 jest.mock(
-  "@/components/atoms/Input/Input",
+  "@/components/atoms/archive/Input/Input",
   (): jest.Mock =>
     jest.fn((props) => (
       <input

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
-import calculateTotalAndTip from "@/globals/helper/calculateTotalAndTip.ts";
+import calculateTotalAndTip from "@/globals/helper/archive/calculateTotalAndTip.ts";
 import useResultCalculations, {
   selectBillValueResult,
   selectPeopleValueResult,
@@ -21,7 +21,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/globals/helper/calculateTotalAndTip.ts",
+  "@/globals/helper/archive/calculateTotalAndTip.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;

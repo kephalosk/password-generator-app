@@ -1,0 +1,20 @@
+import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
+import getBeamColorFromSecurityLevel from "@/globals/helper/getBeamColorFromSecurityLevel.ts";
+
+describe("getBeamColorFromSecurityLevel", (): void => {
+  it.each([
+    [BeamColorEnum.RED, SecurityLevelEnum.WEAK],
+    [BeamColorEnum.ORANGE, SecurityLevelEnum.LOW],
+    [BeamColorEnum.YELLOW, SecurityLevelEnum.MEDIUM],
+    [BeamColorEnum.GREEN, SecurityLevelEnum.STRONG],
+  ])(
+    "returns color %s for security Level %s",
+    (expectedColor: BeamColorEnum, securityLevel: SecurityLevelEnum): void => {
+      const receivedColor: BeamColorEnum =
+        getBeamColorFromSecurityLevel(securityLevel);
+
+      expect(receivedColor).toEqual(expectedColor);
+    },
+  );
+});

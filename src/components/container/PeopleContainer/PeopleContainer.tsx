@@ -1,6 +1,6 @@
 import "./PeopleContainer.scss";
 import React, { ReactElement } from "react";
-import Input, { InputProps } from "@/components/atoms/Input/Input.tsx";
+import Input, { InputProps } from "@/components/atoms/archive/Input/Input.tsx";
 import {
   PEOPLE_ICON_ALT_TEXT,
   PEOPLE_INPUT_ERROR_MESSAGE,

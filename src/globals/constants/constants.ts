@@ -35,7 +35,6 @@ export const PEOPLE_INPUT_NAME: string = "Number of People Input";
 export const PEOPLE_VALUE_INVALID: string = "Invalid People Value";
 export const PEOPLE_ICON_ALT_TEXT: string = "People Icon for Input Field";
 
-export const PRICE_SECTION_DEVISOR_PREFIX: string = "/";
 export const PRICE_SECTION_LABEL_TEXT_AMOUNT: string = "Tip Amount";
 export const PRICE_SECTION_LABEL_TEXT_TOTAL: string = "Total";
 export const PRICE_SECTION_DIVISOR_TEXT: string = "person";
@@ -47,8 +46,6 @@ export const TIP_INPUT_PLACEHOLDER: string = "Custom";
 
 export const EMPTY_PRICE_DECIMAL_STRING: string = "0.00";
 export const EMPTY_STRING: string = "";
-export const EMPTY_PRICE_SECTION_DEVISOR_LABEL_TEXT: string =
-  "Empty Price Section Devisor Label";
 export const EMPTY_TEXT_WARNING_MESSAGE: string = "Label text is empty!";
 
 export const INPUT_ARIA_LABEL_PREFIX: string = "Input field for ";
