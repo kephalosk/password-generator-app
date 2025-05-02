@@ -4,7 +4,7 @@ import useTipItems from "@/hooks/redux/useTipItems.ts";
 import useInputValue from "@/hooks/redux/useInputValue.ts";
 import { TipItem, TipItems } from "@/globals/constants/TipItems.ts";
 import Input from "@/components/atoms/archive/Input/Input.tsx";
-import TipFieldLabel from "@/components/atoms/TipFieldLabel/TipFieldLabel.tsx";
+import TipFieldLabel from "@/components/atoms/archive/TipFieldLabel/TipFieldLabel.tsx";
 import React, { ReactNode } from "react";
 import {
   TIP_INPUT_ID,
@@ -27,7 +27,7 @@ jest.mock(
 
 const TipFieldLabelTestId: string = "tip-field-label";
 jest.mock(
-  "@/components/atoms/TipFieldLabel/TipFieldLabel",
+  "@/components/atoms/archive/TipFieldLabel/TipFieldLabel",
   (): jest.Mock =>
     jest.fn(
       (props): ReactNode => (

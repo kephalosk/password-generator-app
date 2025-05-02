@@ -5,6 +5,8 @@ const getBeamColorFromSecurityLevel = (
   securityLevel: SecurityLevelEnum,
 ): BeamColorEnum => {
   switch (securityLevel) {
+    case SecurityLevelEnum.NONE:
+      return BeamColorEnum.TRANSPARENT;
     case SecurityLevelEnum.WEAK:
       return BeamColorEnum.RED;
     case SecurityLevelEnum.LOW:

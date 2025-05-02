@@ -1,7 +1,7 @@
 import PriceContainer from "@/components/container/PriceContainer/PriceContainer.tsx";
 import Button from "@/components/atoms/Button/Button.tsx";
 import { ReactElement } from "react";
-import useResultCalculations from "@/hooks/useResultCalculations.ts";
+import useSecurityLevel from "@/hooks/useSecurityLevel.ts";
 import { render, screen } from "@testing-library/react";
 import ResultContainer from "@/components/container/ResultContainer/ResultContainer.tsx";
 import useResetFields from "@/hooks/redux/useResetFields.ts";
@@ -30,7 +30,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useResultCalculations.ts",
+  "@/hooks/useSecurityLevel.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;
@@ -70,9 +70,7 @@ describe("ResultContainer", (): void => {
   const resetAllFieldsMock: jest.Mock = jest.fn();
 
   beforeEach((): void => {
-    (useResultCalculations as jest.Mock).mockReturnValue(
-      useResultCalculationsMock,
-    );
+    (useSecurityLevel as jest.Mock).mockReturnValue(useResultCalculationsMock);
     (useResetFields as jest.Mock).mockReturnValue(resetAllFieldsMock);
   });
 

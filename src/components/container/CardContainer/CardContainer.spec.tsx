@@ -46,7 +46,7 @@ describe("CardContainer", (): void => {
     expect(FormContainer).toHaveBeenCalledWith({}, undefined);
   });
 
-  it("renders component ResultContainer", (): void => {
+  it("renders component StrengthContainer", (): void => {
     setup();
 
     const element: HTMLElement | null = screen.getByTestId(

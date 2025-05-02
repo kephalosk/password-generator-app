@@ -41,7 +41,7 @@ describe("characterLengthSlice", (): void => {
     expect(nextState.value).toEqual(CHARACTER_LENGTH_MAX_VALUE);
   });
 
-  it("handles updating the bill value multiple times", (): void => {
+  it("handles updating the characterLength value multiple times", (): void => {
     const action1: {
       payload: number;
       type: "characterLength/setCharacterLengthValue";

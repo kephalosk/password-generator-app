@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import TipFieldLabel, { TipFieldLabelProps } from "./TipFieldLabel";
+import TipFieldLabel, { TipFieldLabelProps } from "./TipFieldLabel.tsx";
 import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
 import useWarnIfEmptyText from "@/hooks/useWarnIfEmptyText.ts";
 

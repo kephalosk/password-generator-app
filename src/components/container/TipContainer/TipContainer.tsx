@@ -6,7 +6,7 @@ import {
   TIP_INPUT_PLACEHOLDER,
   TIP_LABEL,
 } from "@/globals/constants/constants.ts";
-import TipFieldLabel from "@/components/atoms/TipFieldLabel/TipFieldLabel.tsx";
+import TipFieldLabel from "@/components/atoms/archive/TipFieldLabel/TipFieldLabel.tsx";
 import Input, { InputProps } from "@/components/atoms/archive/Input/Input.tsx";
 import { TIP_INPUT_MAX_VALUE } from "@/globals/config.ts";
 import { TipItem, TipItems } from "@/globals/constants/TipItems.ts";

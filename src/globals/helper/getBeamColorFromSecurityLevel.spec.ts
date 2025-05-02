@@ -4,6 +4,7 @@ import getBeamColorFromSecurityLevel from "@/globals/helper/getBeamColorFromSecu
 
 describe("getBeamColorFromSecurityLevel", (): void => {
   it.each([
+    [BeamColorEnum.TRANSPARENT, SecurityLevelEnum.NONE],
     [BeamColorEnum.RED, SecurityLevelEnum.WEAK],
     [BeamColorEnum.ORANGE, SecurityLevelEnum.LOW],
     [BeamColorEnum.YELLOW, SecurityLevelEnum.MEDIUM],

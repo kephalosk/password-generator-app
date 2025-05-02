@@ -39,6 +39,7 @@ describe("useMarkedBeams hook", (): void => {
   };
 
   it.each([
+    [SecurityLevelEnum.NONE, BeamColorEnum.TRANSPARENT],
     [SecurityLevelEnum.WEAK, BeamColorEnum.RED],
     [SecurityLevelEnum.LOW, BeamColorEnum.ORANGE],
     [SecurityLevelEnum.MEDIUM, BeamColorEnum.YELLOW],

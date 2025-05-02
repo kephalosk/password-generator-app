@@ -1,5 +1,5 @@
 import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
-import { useCallback } from "react";
+import { useMemo } from "react";
 import { BeamItem, BeamItems } from "@/globals/constants/BeamItems.ts";
 import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
 import getBeamColorFromSecurityLevel from "@/globals/helper/getBeamColorFromSecurityLevel.ts";
@@ -7,11 +7,10 @@ import getBeamColorFromSecurityLevel from "@/globals/helper/getBeamColorFromSecu
 const useMarkedBeams = (
   securityLevel: SecurityLevelEnum,
 ): { beams: BeamItem[] } => {
-  const getBeamsBySecurityLevel = useCallback((): BeamItem[] => {
-    const beams: BeamItem[] = [...BeamItems];
+  const beams: BeamItem[] = useMemo((): BeamItem[] => {
     const color: BeamColorEnum = getBeamColorFromSecurityLevel(securityLevel);
 
-    return beams.map((beam: BeamItem): BeamItem => {
+    return BeamItems.map((beam: BeamItem): BeamItem => {
       if (beam.index <= securityLevel) {
         return { ...beam, color };
       }
@@ -19,7 +18,7 @@ const useMarkedBeams = (
     });
   }, [securityLevel]);
 
-  return { beams: getBeamsBySecurityLevel() };
+  return { beams };
 };
 
 export default useMarkedBeams;
