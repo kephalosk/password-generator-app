@@ -130,7 +130,7 @@ describe("StrengthContainer Component", (): void => {
     );
   });
 
-  it("renders component BeamContainer", (): void => {
+  it("renders component CheckboxContainer", (): void => {
     setup();
 
     const element: HTMLElement = screen.getByTestId(beamContainerTestId);

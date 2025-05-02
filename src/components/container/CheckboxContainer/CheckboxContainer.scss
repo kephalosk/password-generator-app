@@ -1,0 +1,9 @@
+@use '../../../styles/spaces';
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: spaces.$space-24px;
+}
