@@ -1,4 +1,4 @@
-import "./SliderBar.scss";
+import "./SliderBarValue.scss";
 import React, { ReactElement } from "react";
 
 const SliderBar: React.FC = (): ReactElement => {

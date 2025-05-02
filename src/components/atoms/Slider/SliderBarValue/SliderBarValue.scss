@@ -3,9 +3,11 @@
 
 $slider-bar-height: functions.to-rem(8px);
 
-.sliderBar {
-  background-color: colors.$grey-850;
+.sliderBarValue {
+  background-color: colors.$green-200;
   height: $slider-bar-height;
-  width: 100%;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
