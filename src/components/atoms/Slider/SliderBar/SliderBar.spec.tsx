@@ -1,7 +1,7 @@
 import SliderBar from "@/components/atoms/Slider/SliderBar/SliderBar.tsx";
 import { render } from "@testing-library/react";
 
-describe("SliderBarValue Component", (): void => {
+describe("SliderBarValueAdjuster Component", (): void => {
   const setup = (): { container: HTMLElement } => {
     return render(<SliderBar />);
   };

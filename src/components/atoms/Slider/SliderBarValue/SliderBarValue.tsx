@@ -10,7 +10,7 @@ const SliderBarValue: React.FC<SliderBarValueProps> = ({
 }: SliderBarValueProps): ReactElement => {
   return (
     <div
-      className="sliderBar"
+      className="sliderBarValue"
       style={{
         width: `${widthPercentage}%`,
       }}

@@ -1,0 +1,15 @@
+@use '../../../../styles/colors';
+@use '../../../../styles/functions';
+
+$slider-bar-adjuster-height: functions.to-rem(28px);
+$slider-bar-adjuster-width: functions.to-rem(28px);
+
+.sliderBarAdjuster {
+  border-radius: 100%;
+  background-color: colors.$grey-200;
+  height: $slider-bar-adjuster-height;
+  width: $slider-bar-adjuster-width;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

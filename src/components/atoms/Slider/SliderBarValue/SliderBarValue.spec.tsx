@@ -3,7 +3,7 @@ import SliderBarValue, {
   SliderBarValueProps,
 } from "@/components/atoms/Slider/SliderBarValue/SliderBarValue.tsx";
 
-describe("SliderBarValue Component", (): void => {
+describe("SliderBarValueAdjuster Component", (): void => {
   const widthPercentage: number = 80;
 
   const setup = (
@@ -17,10 +17,11 @@ describe("SliderBarValue Component", (): void => {
     return render(<SliderBarValue {...props} />);
   };
 
-  it("renders div sliderBar", (): void => {
+  it("renders div sliderBarValue", (): void => {
     const { container } = setup();
 
-    const element: HTMLElement | null = container.querySelector(".sliderBar");
+    const element: HTMLElement | null =
+      container.querySelector(".sliderBarValue");
 
     expect(element).toBeInTheDocument();
     expect(element).toHaveAttribute("style", `width: ${widthPercentage}%;`);
