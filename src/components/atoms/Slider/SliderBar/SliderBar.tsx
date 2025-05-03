@@ -1,8 +1,14 @@
 import "./SliderBarValue.scss";
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 
-const SliderBar: React.FC = (): ReactElement => {
-  return <div className="sliderBar"></div>;
+export interface SliderBarProps {
+  children: ReactNode;
+}
+
+const SliderBar: React.FC<SliderBarProps> = ({
+  children,
+}: SliderBarProps): ReactElement => {
+  return <div className="sliderBar">{children}</div>;
 };
 
 export default SliderBar;
