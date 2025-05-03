@@ -24,6 +24,12 @@ describe("useSecurityLevel Hook", (): void => {
   const mockState: RootState = {
     characterLength: { value: characterLength },
     securityLevel: { value },
+    options: {
+      uppercase: false,
+      lowercase: false,
+      numbers: false,
+      symbols: false,
+    },
   };
 
   beforeEach((): void => {
@@ -52,7 +58,7 @@ describe("useSecurityLevel Hook", (): void => {
 
   it("calls securityLevelValue and returns the correct securityLevel value from the store", (): void => {
     const state: RootState = {
-      characterLength: { value: characterLength },
+      ...mockState,
       securityLevel: { value },
     };
 
