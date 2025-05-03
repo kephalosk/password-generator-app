@@ -1,4 +1,4 @@
-import "./SliderBarContainer.scss";
+import "./SliderHeaderContainer.scss";
 import React, { ReactElement } from "react";
 import Label from "@/components/atoms/Label/Label.tsx";
 import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
