@@ -12,10 +12,14 @@ export const EMPTY_PASSWORD_LABEL_TEXT: string = "Empty Password Label";
 export const EMPTY_STRENGTH_BEAM_LABEL_TEXT: string =
   "Empty Strength Beam Label";
 export const EMPTY_UPPERCASE_LABEL_TEXT: string = "Empty Uppercase Label";
+export const EMPTY_COPY_LABEL_TEXT: string = "Empty Copy Label";
 
 export const CHECKBOX_ICON_ALT_TEXT: string = "Checkmark for Checkbox Field";
 
+export const COPY_TEXT: string = "copied";
 export const STRENGTH_LABEL: string = "strength";
+
+export const COPY_ICON_ALT_TEXT: string = "image of Copy Icon";
 
 // old constants
 

@@ -6,4 +6,5 @@ export enum LabelTypeEnum {
   CHECKBOX_LABEL = "checkboxLabel",
   UPPERCASE_LABEL = "uppercaseLabel",
   BEAM_LABEL = "beamLabel",
+  COPY_LABEL = "copyLabel",
 }

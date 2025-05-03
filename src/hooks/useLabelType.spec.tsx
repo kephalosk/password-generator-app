@@ -10,6 +10,7 @@ import {
   PASSWORD_PLACEHOLDER_LABEL_TEXT,
   ZERO_LABEL_TEXT,
   EMPTY_STRENGTH_BEAM_LABEL_TEXT,
+  EMPTY_COPY_LABEL_TEXT,
 } from "@/globals/constants/constants.ts";
 import React, { ReactElement } from "react";
 import useLabelType from "@/hooks/useLabelType.ts";
@@ -60,6 +61,7 @@ describe("useLabelType hook", (): void => {
     [LabelTypeEnum.CHECKBOX_LABEL, textDefined],
     [LabelTypeEnum.UPPERCASE_LABEL, textDefined],
     [LabelTypeEnum.BEAM_LABEL, textDefined],
+    [LabelTypeEnum.COPY_LABEL, textDefined],
     ["undefined" as LabelTypeEnum, textDefined],
   ])(
     "returns aria-label for labelType %s for defined text",
@@ -80,6 +82,7 @@ describe("useLabelType hook", (): void => {
     [LabelTypeEnum.CHECKBOX_LABEL, EMPTY_STRING, EMPTY_CHECKBOX_LABEL_TEXT],
     [LabelTypeEnum.UPPERCASE_LABEL, EMPTY_STRING, EMPTY_UPPERCASE_LABEL_TEXT],
     [LabelTypeEnum.BEAM_LABEL, EMPTY_STRING, EMPTY_STRENGTH_BEAM_LABEL_TEXT],
+    [LabelTypeEnum.COPY_LABEL, EMPTY_STRING, EMPTY_COPY_LABEL_TEXT],
     ["undefined" as LabelTypeEnum, EMPTY_STRING, EMPTY_LABEL_TEXT],
   ])(
     "returns default aria-label for labelType %s for empty text %s",
@@ -100,6 +103,7 @@ describe("useLabelType hook", (): void => {
     [LabelTypeEnum.CHECKBOX_LABEL, textDefined],
     [LabelTypeEnum.UPPERCASE_LABEL, textDefined],
     [LabelTypeEnum.BEAM_LABEL, textDefined],
+    [LabelTypeEnum.COPY_LABEL, textDefined],
     ["undefined" as LabelTypeEnum, textDefined],
   ])(
     "returns text to render for labelType %s",

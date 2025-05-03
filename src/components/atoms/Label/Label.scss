@@ -2,6 +2,14 @@
 @use '../../../styles/fonts';
 @use '../../../styles/spaces';
 
+.copyLabel {
+  text-align: right;
+  text-transform: uppercase;
+  color: colors.$green-200;
+
+  @include fonts.text-preset-3;
+}
+
 .checkboxLabel {
   text-align: left;
   color: colors.$grey-200;

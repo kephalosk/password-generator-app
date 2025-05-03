@@ -11,6 +11,7 @@ import {
   PASSWORD_PLACEHOLDER_LABEL_TEXT,
   ZERO_LABEL_TEXT,
   EMPTY_STRENGTH_BEAM_LABEL_TEXT,
+  EMPTY_COPY_LABEL_TEXT,
 } from "@/globals/constants/constants.ts";
 
 const useLabelType = (
@@ -33,6 +34,8 @@ const useLabelType = (
         return text === EMPTY_STRING ? EMPTY_UPPERCASE_LABEL_TEXT : text;
       case LabelTypeEnum.BEAM_LABEL:
         return text === EMPTY_STRING ? EMPTY_STRENGTH_BEAM_LABEL_TEXT : text;
+      case LabelTypeEnum.COPY_LABEL:
+        return text === EMPTY_STRING ? EMPTY_COPY_LABEL_TEXT : text;
       default:
         return text === EMPTY_STRING ? EMPTY_LABEL_TEXT : text;
     }
@@ -53,6 +56,8 @@ const useLabelType = (
       case LabelTypeEnum.UPPERCASE_LABEL:
         return text;
       case LabelTypeEnum.BEAM_LABEL:
+        return text;
+      case LabelTypeEnum.COPY_LABEL:
         return text;
       default:
         return text;
