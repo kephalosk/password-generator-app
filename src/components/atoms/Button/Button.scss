@@ -15,6 +15,7 @@ $transition-duration: 0.2s;
   color: colors.$grey-800;
   outline: none;
   box-shadow: none;
+  cursor: pointer;
   transition:
           border $transition-duration ease,
           background-color $transition-duration ease;
@@ -23,22 +24,22 @@ $transition-duration: 0.2s;
 }
 .button:hover {
   border: $border-thickness solid colors.$green-200;
-  background-color: colors.$green-200;
-  color: colors.$grey-800;
+  background-color: colors.$grey-800;
+  color: colors.$green-200;
   outline: none;
   box-shadow: none;
 }
 .button:focus {
   border: $border-thickness solid colors.$green-200;
-  background-color: colors.$green-200;
-  color: colors.$grey-800;
+  background-color: colors.$grey-800;
+  color: colors.$green-200;
   outline: none;
   box-shadow: none;
 }
 .button:focus-visible {
   border: $border-thickness solid colors.$green-200;
-  background-color: colors.$green-200;
-  color: colors.$grey-800;
+  background-color: colors.$grey-800;
+  color: colors.$green-200;
   outline: none;
   box-shadow: none;
 }

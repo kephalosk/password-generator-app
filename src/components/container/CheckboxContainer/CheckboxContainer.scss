@@ -1,5 +1,18 @@
+@use '../../../styles/functions';
 @use '../../../styles/spaces';
 
+$border-thickness: functions.to-rem(1px);
+$transition-duration: 0.2s;
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: spaces.$space-24px;
+  transition:
+          border $transition-duration ease;
+}
 .checkboxContainer {
   display: flex;
   flex-direction: row;

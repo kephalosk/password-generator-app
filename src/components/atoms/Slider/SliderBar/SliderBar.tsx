@@ -1,4 +1,4 @@
-import "./SliderBarValue.scss";
+import "./SliderBar.scss";
 import React, { ReactElement, ReactNode } from "react";
 
 export interface SliderBarProps {

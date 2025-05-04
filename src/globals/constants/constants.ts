@@ -21,21 +21,16 @@ export const STRENGTH_LABEL: string = "strength";
 
 export const COPY_ICON_ALT_TEXT: string = "image of Copy Icon";
 
-// old constants
-
 export const BUTTON_ARIA_LABEL_PREFIX: string = "button for: ";
+export const BUTTON_TEXT: string = "generate";
 
-export const CALCULATE_TOTAL_AND_TIP_ERROR_MESSAGE: string =
-  "Invalid Input value for calculateTotalAndTip";
-
-export const LOGO_ICON_ALT_TEXT: string = "Logo Icon of Splitter";
-
-export const EMPTY_PRICE_DECIMAL_STRING: string = "0.00";
 export const EMPTY_STRING: string = "";
 export const EMPTY_TEXT_WARNING_MESSAGE: string = "Label text is empty!";
 
 export const ENVIRONMENT_DEVELOPMENT: string = "development";
 export const ENVIRONMENT_PRODUCTION: string = "production";
 
-export const REGEXP_FOR_WHOLE_NUMBERS: string = "^\\d*$";
-export const REGEXP_FOR_DECIMALS: string = "^\\d+(\\.\\d{0,2})?$";
+export const FRONTEND_MENTOR_NAME: string = "Frontend Mentor";
+export const FRONTEND_MENTOR_PREFIX: string = "Challenge by ";
+export const FRONTEND_MENTOR_SUFFIX: string = ". Coded by ";
+export const GITHUB_PROFILE_NAME: string = "kephalosk";

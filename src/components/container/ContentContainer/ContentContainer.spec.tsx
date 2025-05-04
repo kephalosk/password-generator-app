@@ -53,13 +53,13 @@ describe("ContentContainer Component", (): void => {
     return render(<ContentContainer />);
   };
 
-  const contentContainerSelecter: string = "contentContainer";
+  const contentContainerSelector: string = "contentContainer";
 
-  it(`renders div ${contentContainerSelecter}`, (): void => {
+  it(`renders div ${contentContainerSelector}`, (): void => {
     const { container } = setup();
 
     const element: HTMLElement | null = container.querySelector(
-      `.${contentContainerSelecter}`,
+      `.${contentContainerSelector}`,
     );
 
     expect(element).toBeInTheDocument();
