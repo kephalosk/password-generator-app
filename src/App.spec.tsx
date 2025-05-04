@@ -1,79 +1,104 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App.tsx";
-import { Provider } from "react-redux";
-import { store } from "@/redux/store.ts";
-import CardContainer from "@/components/container/CardContainer/CardContainer.tsx";
+import Headline from "@/components/atoms/Headline/Headline.tsx";
+import { HEADLINE_TEXT } from "@/globals/constants/constants.ts";
+import PasswordContainer from "@/components/container/PasswordContainer/PasswordContainer.tsx";
+import ContentContainer from "@/components/container/ContentContainer/ContentContainer.tsx";
+import Footer from "@/components/atoms/Footer/Footer.tsx";
 import { ReactElement } from "react";
-import { LOGO_ICON_ALT_TEXT } from "@/globals/constants/constants.ts";
-import { LOGO_ICON_SRC } from "@/globals/constants/ressources.ts";
+import { render, screen } from "@testing-library/react";
+import App from "@/App.tsx";
 
-const cardContainerTestId: string = "card-container";
+const headlineDataTestId: string = "headline";
 jest.mock(
-  "@/components/container/CardContainer/CardContainer.tsx",
+  "@/components/atoms/Headline/Headline.tsx",
   (): jest.Mock =>
     jest.fn((): ReactElement => {
-      return <div data-testid={cardContainerTestId}></div>;
+      return <div data-testid={headlineDataTestId}></div>;
     }),
 );
 
+const passwordContainerDataTestId: string = "password-container";
 jest.mock(
-  "@/redux/store.ts",
-  (): {
-    __esModule: boolean;
-    store: {
-      getState: jest.Mock;
-      dispatch: jest.Mock;
-      subscribe: jest.Mock;
-    };
-  } => ({
-    __esModule: true,
-    store: {
-      getState: jest.fn(),
-      dispatch: jest.fn(),
-      subscribe: jest.fn(),
-    },
-  }),
+  "@/components/container/PasswordContainer/PasswordContainer.tsx",
+  (): jest.Mock =>
+    jest.fn((): ReactElement => {
+      return <div data-testid={passwordContainerDataTestId}></div>;
+    }),
 );
 
-describe("App", (): void => {
-  it("renders div app", (): void => {
-    const { container } = render(
-      <Provider store={store}>
-        <App />
-      </Provider>,
-    );
+const contentContainerDataTestId: string = "content-container";
+jest.mock(
+  "@/components/container/ContentContainer/ContentContainer.tsx",
+  (): jest.Mock =>
+    jest.fn((): ReactElement => {
+      return <div data-testid={contentContainerDataTestId}></div>;
+    }),
+);
 
-    const element: HTMLElement | null = container.querySelector(".app");
+const footerDataTestId: string = "footer";
+jest.mock(
+  "@/components/atoms/Footer/Footer.tsx",
+  (): jest.Mock =>
+    jest.fn((): ReactElement => {
+      return <div data-testid={footerDataTestId}></div>;
+    }),
+);
+
+describe("App Component", (): void => {
+  const setup = (): { container: HTMLElement } => {
+    return render(<App />);
+  };
+
+  const appSelector: string = "app";
+
+  it(`renders div ${appSelector}`, (): void => {
+    const { container } = setup();
+
+    const element: HTMLElement | null = container.querySelector(
+      `.${appSelector}`,
+    );
 
     expect(element).toBeInTheDocument();
   });
 
-  it("renders img appIcon", (): void => {
-    const { container } = render(
-      <Provider store={store}>
-        <App />
-      </Provider>,
-    );
+  it("renders component Headline", (): void => {
+    setup();
 
-    const element: HTMLElement | null = container.querySelector(".appIcon");
+    const element: HTMLElement = screen.getByTestId(headlineDataTestId);
 
     expect(element).toBeInTheDocument();
-    expect(element).toHaveAttribute("alt", LOGO_ICON_ALT_TEXT);
-    expect(element).toHaveAttribute("aria-hidden", "true");
-    expect(element).toHaveAttribute("src", LOGO_ICON_SRC);
+    expect(Headline).toHaveBeenCalledTimes(1);
+    expect(Headline).toHaveBeenCalledWith({ title: HEADLINE_TEXT }, undefined);
   });
 
-  it("renders component CardContainer", (): void => {
-    render(
-      <Provider store={store}>
-        <App />
-      </Provider>,
+  it("renders component PasswordContainer", (): void => {
+    setup();
+
+    const element: HTMLElement = screen.getByTestId(
+      passwordContainerDataTestId,
     );
 
-    const element: HTMLElement | null = screen.getByTestId(cardContainerTestId);
+    expect(element).toBeInTheDocument();
+    expect(PasswordContainer).toHaveBeenCalledTimes(1);
+    expect(PasswordContainer).toHaveBeenCalledWith({}, undefined);
+  });
+
+  it("renders component ContentContainer", (): void => {
+    setup();
+
+    const element: HTMLElement = screen.getByTestId(contentContainerDataTestId);
 
     expect(element).toBeInTheDocument();
-    expect(CardContainer).toHaveBeenCalledTimes(1);
-    expect(CardContainer).toHaveBeenCalledWith({}, undefined);
+    expect(ContentContainer).toHaveBeenCalledTimes(1);
+    expect(ContentContainer).toHaveBeenCalledWith({}, undefined);
+  });
+
+  it(`renders component Footer`, (): void => {
+    setup();
+
+    const element: HTMLElement = screen.getByTestId(footerDataTestId);
+
+    expect(element).toBeInTheDocument();
+    expect(Footer).toHaveBeenCalledTimes(1);
+    expect(Footer).toHaveBeenCalledWith({}, undefined);
   });
 });

@@ -1,11 +1,17 @@
+@use './styles/colors';
+@use './styles/fonts';
+@use './styles/screens';
+@use './styles/spaces';
+
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: spaces.$space-40px;
+  row-gap: spaces.$space-16px;
+  min-height: 100vh;
 
   @include screens.tablet-and-up{
-    row-gap: spaces.$space-80px;
+    row-gap: spaces.$space-24px;
   }
 }
