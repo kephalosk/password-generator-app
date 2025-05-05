@@ -3,9 +3,11 @@ import { OptionItem } from "@/globals/constants/OptionItems.ts";
 import CheckboxContainer from "@/components/container/CheckboxContainer/CheckboxContainer.tsx";
 import { ReactElement } from "react";
 import useCurrentOptions from "@/hooks/useCurrentOptions.ts";
+import useSettingOption from "@/hooks/useSettingOption.ts";
 
 const OptionContainer = () => {
   const { currentOptions } = useCurrentOptions();
+  const { settingOption } = useSettingOption();
 
   return (
     <div className="optionContainer">
@@ -15,6 +17,7 @@ const OptionContainer = () => {
             key={index}
             option={option.option}
             isChecked={option.isChecked}
+            handleOptionClick={() => settingOption(option)}
           />
         );
       })}
