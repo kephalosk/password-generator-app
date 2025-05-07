@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { setCharacterLengthValue } from "@/redux/slices/characterLengthSlice.ts";
-import useUpdateCharacterLength from "@/hooks/redux/characterLength/useUpdateCharacterlength.ts";
+import useUpdateCharacterLength from "@/hooks/redux/characterLength/useUpdateCharacterLength.ts";
 import { useDispatch } from "react-redux";
 
 jest.mock(
