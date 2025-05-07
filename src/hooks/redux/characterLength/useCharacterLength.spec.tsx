@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import useCharacterLength from "@/hooks/useCharacterlength.ts";
+import useCharacterLength from "@/hooks/redux/characterLength/useCharacterlength.ts";
 import { useSelector } from "react-redux";
 import { render, screen } from "@testing-library/react";
 import { RootState } from "@/redux/store.ts";
