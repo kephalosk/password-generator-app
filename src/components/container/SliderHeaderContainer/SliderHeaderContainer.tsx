@@ -2,12 +2,16 @@ import "./SliderHeaderContainer.scss";
 import React, { ReactElement } from "react";
 import Label from "@/components/atoms/Label/Label.tsx";
 import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
-import {
-  SLIDER_HEADER_LABEL_TEXT,
-  ZERO_LABEL_TEXT,
-} from "@/globals/constants/constants.ts";
+import { SLIDER_HEADER_LABEL_TEXT } from "@/globals/constants/constants.ts";
+import { RootState } from "@/redux/store.ts";
+import { useSelector } from "react-redux";
 
 const SliderHeaderContainer: React.FC = (): ReactElement => {
+  const characterLength: number = useSelector(
+    (state: RootState) => state.characterLength.value,
+  );
+  const characterLengthString: string = characterLength.toString();
+
   return (
     <div className="sliderHeaderContainer">
       <span className="sliderHeaderContainerSpace">
@@ -16,7 +20,7 @@ const SliderHeaderContainer: React.FC = (): ReactElement => {
           text={SLIDER_HEADER_LABEL_TEXT}
         />
       </span>
-      <Label type={LabelTypeEnum.NUMBER_LABEL} text={ZERO_LABEL_TEXT} />
+      <Label type={LabelTypeEnum.NUMBER_LABEL} text={characterLengthString} />
     </div>
   );
 };

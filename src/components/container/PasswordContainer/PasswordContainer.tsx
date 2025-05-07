@@ -21,6 +21,7 @@ const PasswordContainer = () => {
         alt={COPY_ICON_ALT_TEXT}
         aria-label={COPY_ICON_ALT_TEXT}
         aria-hidden={false}
+        tabIndex={0}
       />
     </div>
   );

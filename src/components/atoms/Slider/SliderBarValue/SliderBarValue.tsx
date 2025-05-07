@@ -1,21 +1,8 @@
 import "./SliderBarValue.scss";
 import React, { ReactElement } from "react";
 
-export interface SliderBarValueProps {
-  widthPercentage: number;
-}
-
-const SliderBarValue: React.FC<SliderBarValueProps> = ({
-  widthPercentage,
-}: SliderBarValueProps): ReactElement => {
-  return (
-    <div
-      className="sliderBarValue"
-      style={{
-        width: `${widthPercentage}%`,
-      }}
-    ></div>
-  );
+const SliderBarValue: React.FC = (): ReactElement => {
+  return <div className="sliderBarValue"></div>;
 };
 
 export default SliderBarValue;

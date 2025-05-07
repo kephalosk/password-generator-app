@@ -2,19 +2,14 @@ import "./SliderBarAdjuster.scss";
 import React, { ReactElement } from "react";
 
 export interface SliderBarAdjusterProps {
-  widthPercentage: number;
+  isClicked: boolean;
 }
 
 const SliderBarAdjuster: React.FC<SliderBarAdjusterProps> = ({
-  widthPercentage,
+  isClicked,
 }: SliderBarAdjusterProps): ReactElement => {
   return (
-    <div
-      className="sliderBarAdjuster"
-      style={{
-        left: `${widthPercentage}%`,
-      }}
-    ></div>
+    <div className={`sliderBarAdjuster ${isClicked ? "clicked" : ""}`}></div>
   );
 };
 

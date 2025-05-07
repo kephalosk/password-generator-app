@@ -1,20 +1,9 @@
 import { render } from "@testing-library/react";
-import SliderBarValue, {
-  SliderBarValueProps,
-} from "@/components/atoms/Slider/SliderBarValue/SliderBarValue.tsx";
+import SliderBarValue from "@/components/atoms/Slider/SliderBarValue/SliderBarValue.tsx";
 
 describe("SliderBarValueAdjuster Component", (): void => {
-  const widthPercentage: number = 80;
-
-  const setup = (
-    propsOverride?: Partial<SliderBarValueProps>,
-  ): { container: HTMLElement } => {
-    const defaultProps: SliderBarValueProps = {
-      widthPercentage,
-    };
-
-    const props: SliderBarValueProps = { ...defaultProps, ...propsOverride };
-    return render(<SliderBarValue {...props} />);
+  const setup = (): { container: HTMLElement } => {
+    return render(<SliderBarValue />);
   };
 
   it("renders div sliderBarValue", (): void => {
@@ -24,6 +13,5 @@ describe("SliderBarValueAdjuster Component", (): void => {
       container.querySelector(".sliderBarValue");
 
     expect(element).toBeInTheDocument();
-    expect(element).toHaveAttribute("style", `width: ${widthPercentage}%;`);
   });
 });

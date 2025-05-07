@@ -1,8 +1,10 @@
 @use 'functions';
 
+$space-4px: functions.to-rem(4px);
 $space-8px: functions.to-rem(8px);
 $space-12px: functions.to-rem(12px);
 $space-16px: functions.to-rem(16px);
+$space-18px: functions.to-rem(18px);
 $space-24px: functions.to-rem(24px);
 $space-32px: functions.to-rem(32px);
 $space-56px: functions.to-rem(56px);

@@ -12,6 +12,7 @@ $checkbox-icon-width: functions.to-rem(14px);
   background-color: transparent;
   height: $checkbox-height;
   width: $checkbox-width;
+  min-width: $checkbox-width;
   position: relative;
 }
 .checkbox.isChecked {
@@ -28,6 +29,6 @@ $checkbox-icon-width: functions.to-rem(14px);
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.checkbox.isChecked {
+.checkboxIcon.isChecked {
   display: block;
 }

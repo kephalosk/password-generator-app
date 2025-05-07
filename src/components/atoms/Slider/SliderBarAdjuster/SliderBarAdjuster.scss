@@ -11,5 +11,17 @@ $slider-bar-adjuster-width: functions.to-rem(28px);
   width: $slider-bar-adjuster-width;
   position: absolute;
   top: 50%;
+  left: 100%;
   transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.sliderBarAdjuster:hover {
+  background-color: colors.$green-200;
+}
+.sliderBarAdjuster.clicked {
+  background-color: colors.$green-200;
 }

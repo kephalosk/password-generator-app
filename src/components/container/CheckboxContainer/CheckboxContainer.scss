@@ -1,3 +1,4 @@
+@use '../../../styles/colors';
 @use '../../../styles/functions';
 @use '../../../styles/spaces';
 
@@ -5,14 +6,27 @@ $border-thickness: functions.to-rem(1px);
 $transition-duration: 0.2s;
 
 .checkboxContainer {
+  border: $border-thickness solid colors.$grey-800;
+  padding: spaces.$space-4px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   column-gap: spaces.$space-24px;
+  cursor: pointer;
   transition:
+          background-color $transition-duration ease,
           border $transition-duration ease;
 }
+.checkboxContainer:hover {
+  background-color: colors.$grey-850;
+}
+.checkboxContainer:focus, .checkboxContainer:focus-visible {
+  border: $border-thickness solid colors.$green-200;
+  outline: none;
+  box-shadow: none;
+}
+
 .checkboxContainer {
   display: flex;
   flex-direction: row;

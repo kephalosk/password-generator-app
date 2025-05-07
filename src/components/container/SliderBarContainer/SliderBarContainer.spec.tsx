@@ -77,10 +77,7 @@ describe("SliderBarContainer Component", (): void => {
 
     expect(element).toBeInTheDocument();
     expect(SliderBarValue).toHaveBeenCalledTimes(1);
-    expect(SliderBarValue).toHaveBeenCalledWith(
-      { widthPercentage: 50 },
-      undefined,
-    );
+    expect(SliderBarValue).toHaveBeenCalledWith({}, undefined);
   });
 
   it("renders span sliderBarContainerAdjuster", (): void => {
@@ -102,9 +99,6 @@ describe("SliderBarContainer Component", (): void => {
 
     expect(element).toBeInTheDocument();
     expect(SliderBarAdjuster).toHaveBeenCalledTimes(1);
-    expect(SliderBarAdjuster).toHaveBeenCalledWith(
-      { widthPercentage: 50 },
-      undefined,
-    );
+    expect(SliderBarAdjuster).toHaveBeenCalledWith({}, undefined);
   });
 });

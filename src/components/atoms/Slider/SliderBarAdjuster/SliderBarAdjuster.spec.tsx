@@ -4,13 +4,13 @@ import SliderBarAdjuster, {
 } from "@/components/atoms/Slider/SliderBarAdjuster/SliderBarAdjuster.tsx";
 
 describe("SliderBarAdjuster Component", (): void => {
-  const widthPercentage: number = 80;
+  const isClicked: boolean = false;
 
   const setup = (
     propsOverride?: Partial<SliderBarAdjusterProps>,
   ): { container: HTMLElement } => {
     const defaultProps: SliderBarAdjusterProps = {
-      widthPercentage,
+      isClicked,
     };
 
     const props: SliderBarAdjusterProps = { ...defaultProps, ...propsOverride };
@@ -24,6 +24,22 @@ describe("SliderBarAdjuster Component", (): void => {
       container.querySelector(".sliderBarAdjuster");
 
     expect(element).toBeInTheDocument();
-    expect(element).toHaveAttribute("style", `left: ${widthPercentage}%;`);
   });
+
+  it.each([[true], [false]])(
+    "handles class clicked when passed prop isClicked is %s",
+    (isClicked: boolean): void => {
+      const { container } = setup({ isClicked });
+
+      const element: HTMLElement | null =
+        container.querySelector(".sliderBarAdjuster");
+
+      expect(element).toBeInTheDocument();
+      if (isClicked) {
+        expect(element).toHaveClass("clicked");
+      } else {
+        expect(element).not.toHaveClass("clicked");
+      }
+    },
+  );
 });

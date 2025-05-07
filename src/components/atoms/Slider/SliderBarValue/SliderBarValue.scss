@@ -6,6 +6,7 @@ $slider-bar-height: functions.to-rem(8px);
 .sliderBarValue {
   background-color: colors.$green-200;
   height: $slider-bar-height;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 0;
