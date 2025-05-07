@@ -17,9 +17,10 @@ export default {
     },
   },
   coveragePathIgnorePatterns: [
-    "/src/globals/constants",
-    "/src/globals/config.ts",
     "/src/jest",
+    "/src/globals/config.ts",
+    "/src/globals/constants",
+    "/src/redux/fixtures",
   ],
   collectCoverage: true,
 };
