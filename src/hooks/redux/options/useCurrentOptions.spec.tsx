@@ -7,7 +7,7 @@ import useCurrentOptions, {
   selectNumbersValue,
   selectSymbolsValue,
   selectUppercaseValue,
-} from "@/hooks/useCurrentOptions.ts";
+} from "@/hooks/redux/options/useCurrentOptions.ts";
 import { OptionItem, OptionItems } from "@/globals/constants/OptionItems.ts";
 import { ReactElement } from "react";
 import { OptionKeyEnum } from "@/globals/constants/OptionKeyEnum.ts";

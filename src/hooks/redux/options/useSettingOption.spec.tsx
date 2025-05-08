@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import useSettingOption from "@/hooks/useSettingOption.ts";
+import useSettingOption from "@/hooks/redux/options/useSettingOption.ts";
 import { OptionItem, OptionItems } from "@/globals/constants/OptionItems.ts";
 import { fireEvent, render } from "@testing-library/react";
 import { useDispatch } from "react-redux";

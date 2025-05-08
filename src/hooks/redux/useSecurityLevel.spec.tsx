@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
 import useSecurityLevel, {
   selectSecurityLevel,
-} from "@/hooks/useSecurityLevel.ts";
+} from "@/hooks/redux/useSecurityLevel.ts";
 import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
 
 jest.mock(

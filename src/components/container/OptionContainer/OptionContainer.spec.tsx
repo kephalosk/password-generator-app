@@ -1,10 +1,10 @@
 import CheckboxContainer from "@/components/container/CheckboxContainer/CheckboxContainer.tsx";
 import { OptionItem, OptionItems } from "@/globals/constants/OptionItems.ts";
 import { ReactElement } from "react";
-import useCurrentOptions from "@/hooks/useCurrentOptions.ts";
+import useCurrentOptions from "@/hooks/redux/options/useCurrentOptions.ts";
 import { fireEvent, render, screen } from "@testing-library/react";
 import OptionContainer from "@/components/container/OptionContainer/OptionContainer.tsx";
-import useSettingOption from "@/hooks/useSettingOption.ts";
+import useSettingOption from "@/hooks/redux/options/useSettingOption.ts";
 
 const checkboxContainerDataTestId: string = "checkbox-container";
 jest.mock(
@@ -21,7 +21,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useCurrentOptions.ts",
+  "@/hooks/redux/options/useCurrentOptions.ts",
   (): { __esModule: boolean; default: jest.Mock } => ({
     __esModule: true,
     default: jest.fn(),
@@ -29,7 +29,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useSettingOption.ts",
+  "@/hooks/redux/options/useSettingOption.ts",
   (): { __esModule: boolean; default: jest.Mock } => ({
     __esModule: true,
     default: jest.fn(),

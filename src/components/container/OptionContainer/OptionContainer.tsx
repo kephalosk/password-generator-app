@@ -2,8 +2,8 @@ import "./OptionContainer.scss";
 import { OptionItem } from "@/globals/constants/OptionItems.ts";
 import CheckboxContainer from "@/components/container/CheckboxContainer/CheckboxContainer.tsx";
 import { ReactElement } from "react";
-import useCurrentOptions from "@/hooks/useCurrentOptions.ts";
-import useSettingOption from "@/hooks/useSettingOption.ts";
+import useCurrentOptions from "@/hooks/redux/options/useCurrentOptions.ts";
+import useSettingOption from "@/hooks/redux/options/useSettingOption.ts";
 
 const OptionContainer = () => {
   const { currentOptions } = useCurrentOptions();

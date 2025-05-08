@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import useSecurityLevel from "@/hooks/useSecurityLevel.ts";
+import useSecurityLevel from "@/hooks/redux/useSecurityLevel.ts";
 import { render, screen } from "@testing-library/react";
 import useSecurityLabel from "@/hooks/useSecurityLabel.ts";
 import StrengthContainer from "@/components/container/StrengthContainer/StrengthContainer.tsx";
@@ -33,7 +33,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useSecurityLevel.ts",
+  "@/hooks/redux/useSecurityLevel.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;

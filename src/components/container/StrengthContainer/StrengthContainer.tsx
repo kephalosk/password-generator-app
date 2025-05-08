@@ -4,7 +4,7 @@ import Label from "@/components/atoms/Label/Label.tsx";
 import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
 import BeamContainer from "@/components/container/BeamContainer/BeamContainer.tsx";
 import { STRENGTH_LABEL } from "@/globals/constants/constants.ts";
-import useSecurityLevel from "@/hooks/useSecurityLevel.ts";
+import useSecurityLevel from "@/hooks/redux/useSecurityLevel.ts";
 import useSecurityLabel from "@/hooks/useSecurityLabel.ts";
 
 const StrengthContainer: React.FC = (): ReactElement => {
