@@ -1,4 +1,4 @@
-import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
+import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
 
 export interface BeamItem {
   index: number;

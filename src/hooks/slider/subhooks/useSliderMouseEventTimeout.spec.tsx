@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderMouseTimeoutHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseTimeoutHook } from "@/globals/models/types/SliderMouseTypes.ts";
 import useSliderMouseEventTimeout from "@/hooks/slider/subhooks/useSliderMouseEventTimeout.ts";
 
 const mockedTimeoutId: NodeJS.Timeout = {} as NodeJS.Timeout;

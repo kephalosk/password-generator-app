@@ -2,7 +2,7 @@ import { RootState } from "@/redux/store.ts";
 import { OptionItem, OptionItems } from "@/globals/constants/OptionItems.ts";
 import { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { OptionEnum } from "@/globals/constants/OptionEnum.ts";
+import { OptionEnum } from "@/globals/models/enums/OptionEnum.ts";
 
 export const selectUppercaseValue = (state: RootState) =>
   state.options.uppercase;

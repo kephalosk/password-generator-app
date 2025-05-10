@@ -1,5 +1,5 @@
 import React, { useRef, useCallback } from "react";
-import { KeyClickBypassHook } from "@/globals/types/KeyClickBypassTypes.ts";
+import { KeyClickBypassHook } from "@/globals/models/types/KeyClickBypassTypes.ts";
 
 const useKeyClickBypass = (
   action: () => void,

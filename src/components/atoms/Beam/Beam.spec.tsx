@@ -1,6 +1,6 @@
 import Beam, { BeamProps } from "@/components/atoms/Beam/Beam.tsx";
 import { render } from "@testing-library/react";
-import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
+import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
 
 describe("Beam Component", (): void => {
   const color: BeamColorEnum = BeamColorEnum.GREEN;

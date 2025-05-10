@@ -4,7 +4,7 @@ import { RootState } from "@/redux/store.ts";
 import useSecurityLevel, {
   selectSecurityLevel,
 } from "@/hooks/redux/useSecurityLevel.ts";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 
 jest.mock(
   "react-redux",

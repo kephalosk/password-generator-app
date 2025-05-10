@@ -2,7 +2,7 @@ import securityLevelReducer, {
   SecurityLevelState,
   setSecurityLevelValue,
 } from "./securityLevelSlice.ts";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 
 describe("securityLevelSlice", (): void => {
   const initialState: { value: number } = { value: SecurityLevelEnum.NONE };

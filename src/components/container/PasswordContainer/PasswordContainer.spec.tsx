@@ -2,7 +2,7 @@ import Label from "@/components/atoms/Label/Label.tsx";
 import { ReactElement } from "react";
 import { render } from "@testing-library/react";
 import PasswordContainer from "@/components/container/PasswordContainer/PasswordContainer.tsx";
-import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
+import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import { COPY_ICON_SRC } from "@/globals/constants/ressources.ts";
 import {
   COPY_ICON_ALT_TEXT,

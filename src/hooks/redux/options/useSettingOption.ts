@@ -2,7 +2,7 @@ import { OptionItem } from "@/globals/constants/OptionItems.ts";
 import { Dispatch } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
-import { OptionEnum } from "@/globals/constants/OptionEnum.ts";
+import { OptionEnum } from "@/globals/models/enums/OptionEnum.ts";
 import {
   setLowercaseOption,
   setNumbersOption,

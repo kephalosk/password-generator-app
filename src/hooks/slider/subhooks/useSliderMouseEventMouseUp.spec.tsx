@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderMouseMouseUpHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseMouseUpHook } from "@/globals/models/types/SliderMouseTypes.ts";
 import useSliderMouseEventMouseUp from "@/hooks/slider/subhooks/useSliderMouseEventMouseUp.ts";
 
 const onDraggingChangeMock: jest.Mock = jest.fn();

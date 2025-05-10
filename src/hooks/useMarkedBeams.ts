@@ -1,7 +1,7 @@
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import { useMemo } from "react";
 import { BeamItem, BeamItems } from "@/globals/constants/BeamItems.ts";
-import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
+import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
 import getBeamColorFromSecurityLevel from "@/globals/helper/getBeamColorFromSecurityLevel.ts";
 
 const useMarkedBeams = (

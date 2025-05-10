@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { SliderMouseTimeoutHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseTimeoutHook } from "@/globals/models/types/SliderMouseTypes.ts";
 
 const useSliderMouseEventTimeout = (): SliderMouseTimeoutHook => {
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);

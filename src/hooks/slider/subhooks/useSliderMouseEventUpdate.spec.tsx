@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderMouseUpdateHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseUpdateHook } from "@/globals/models/types/SliderMouseTypes.ts";
 import useSliderMouseEventUpdate from "@/hooks/slider/subhooks/useSliderMouseEventUpdate.ts";
 import {
   CHARACTER_LENGTH_MAX_VALUE,

@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
 import { BeamItem } from "@/globals/constants/BeamItems.ts";
 import useMarkedBeams from "@/hooks/useMarkedBeams.ts";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import { render, screen } from "@testing-library/react";
-import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
+import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
 
 interface TestComponentProps {
   securityLevel: SecurityLevelEnum;

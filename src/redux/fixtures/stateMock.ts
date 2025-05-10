@@ -1,5 +1,5 @@
 import { RootState } from "@/redux/store.ts";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import { CHARACTER_LENGTH_MIN_VALUE } from "@/globals/config.ts";
 
 export const stateMock: RootState = {

@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderKeyboardHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 import useSliderKeyboardEvents from "@/hooks/slider/useSliderKeyboardEvents.ts";
 import useSliderKeyboardEventOnFocusChange from "@/hooks/slider/subhooks/useSliderKeyboardEventOnFocusChange.ts";
 import useSliderKeyboardEventKeyDown from "@/hooks/slider/subhooks/useSliderKeyboardEventKeyDown.ts";

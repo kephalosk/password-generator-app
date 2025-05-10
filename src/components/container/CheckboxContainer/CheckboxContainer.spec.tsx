@@ -2,15 +2,15 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { ReactElement } from "react";
 import Checkbox from "@/components/atoms/Checkbox/Checkbox.tsx";
 import Label from "@/components/atoms/Label/Label.tsx";
-import { OptionEnum } from "@/globals/constants/OptionEnum.ts";
+import { OptionEnum } from "@/globals/models/enums/OptionEnum.ts";
 import CheckboxContainer, {
   CheckboxContainerProps,
 } from "@/components/container/CheckboxContainer/CheckboxContainer.tsx";
-import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
+import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
 import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
-import { KeyClickBypassHook } from "@/globals/types/KeyClickBypassTypes.ts";
-import { ReactNamesEnum } from "@/globals/constants/ReactNamesEnum.ts";
+import { KeyClickBypassHook } from "@/globals/models/types/KeyClickBypassTypes.ts";
+import { ReactNamesEnum } from "@/globals/models/enums/ReactNamesEnum.ts";
 
 const checkboxTestId: string = "checkbox";
 jest.mock(

@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { render } from "@testing-library/react";
 import Label from "@/components/atoms/Label/Label.tsx";
-import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
+import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import { SLIDER_HEADER_LABEL_TEXT } from "@/globals/constants/constants.ts";
 import SliderHeaderContainer from "@/components/container/SliderHeaderContainer/SliderHeaderContainer.tsx";
 import useCharacterLength from "@/hooks/redux/characterLength/useCharacterLength.ts";

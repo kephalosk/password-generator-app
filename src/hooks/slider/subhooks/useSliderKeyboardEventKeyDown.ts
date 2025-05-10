@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import isCharacterLengthGoingOutOfBounce from "@/globals/helper/slider/isCharacterLengthGoingOutOfBounce.ts";
 import setNewPosition from "@/globals/helper/slider/setNewPosition.ts";
-import { SliderKeyboardKeyDownHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardKeyDownHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 import { ERROR_MESSAGE_SLIDER_KEYBOARD_KEYDOWN_PREFIX } from "@/globals/constants/ErrorMessages.ts";
 
 const useSliderKeyboardEventKeyDown = (

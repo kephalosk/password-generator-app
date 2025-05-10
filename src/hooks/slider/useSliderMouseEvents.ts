@@ -6,7 +6,7 @@ import {
   SliderMouseOnDraggingChangeHook,
   SliderMouseTimeoutHook,
   SliderMouseUpdateHook,
-} from "@/globals/types/SliderMouseTypes.ts";
+} from "@/globals/models/types/SliderMouseTypes.ts";
 import useSliderMouseEventUpdate from "@/hooks/slider/subhooks/useSliderMouseEventUpdate.ts";
 import useSliderMouseEventOnDraggingChange from "@/hooks/slider/subhooks/useSliderMouseEventOnDraggingChange.ts";
 import useSliderMouseEventMouseDown from "@/hooks/slider/subhooks/useSliderMouseEventMouseDown.ts";

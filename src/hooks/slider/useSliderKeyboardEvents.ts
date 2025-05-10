@@ -3,7 +3,7 @@ import {
   SliderKeyboardHook,
   SliderKeyboardKeyDownHook,
   SliderKeyboardKeyUpHook,
-} from "@/globals/types/SliderKeyboardTypes.ts";
+} from "@/globals/models/types/SliderKeyboardTypes.ts";
 import useSliderKeyboardEventOnFocusChange from "@/hooks/slider/subhooks/useSliderKeyboardEventOnFocusChange.ts";
 import useSliderKeyboardEventKeyDown from "@/hooks/slider/subhooks/useSliderKeyboardEventKeyDown.ts";
 import useSliderKeyboardEventKeyUp from "@/hooks/slider/subhooks/useSliderKeyboardEventKeyUp.ts";

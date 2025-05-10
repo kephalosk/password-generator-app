@@ -5,8 +5,8 @@ import BeamContainer, {
 import Beam from "@/components/atoms/Beam/Beam.tsx";
 import { ReactElement } from "react";
 import { BeamItem, BeamItems } from "@/globals/constants/BeamItems.ts";
-import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import useMarkedBeams from "@/hooks/useMarkedBeams.ts";
 
 const beamDataTestId: string = "beam";

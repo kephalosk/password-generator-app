@@ -2,7 +2,7 @@ import { RootState, store } from "./store";
 import { setCharacterLengthValue } from "@/redux/slices/characterLengthSlice.ts";
 import { CHARACTER_LENGTH_MAX_VALUE } from "@/globals/config.ts";
 import { setSecurityLevelValue } from "@/redux/slices/securityLevelSlice.ts";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import {
   setLowercaseOption,
   setNumbersOption,

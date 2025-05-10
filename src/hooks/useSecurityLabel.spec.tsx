@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import useSecurityLabel from "@/hooks/useSecurityLabel.ts";
 import React from "react";
-import { SecurityLabelEnum } from "@/globals/constants/SecurityLabelEnum.ts";
+import { SecurityLabelEnum } from "@/globals/models/enums/SecurityLabelEnum.ts";
 
 describe("useSecurityLabel Hook", (): void => {
   interface TestComponentProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderMouseMouseMoveHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseMouseMoveHook } from "@/globals/models/types/SliderMouseTypes.ts";
 import useSliderMouseEventMouseMove from "@/hooks/slider/subhooks/useSliderMouseEventMouseMove.ts";
 
 const clearTimeoutIdMock: jest.Mock = jest.fn();

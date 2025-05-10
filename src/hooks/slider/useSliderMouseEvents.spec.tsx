@@ -2,7 +2,7 @@ import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { mockedRefObjectDiv } from "@/jest/fixtures/RefObjectFixtures.ts";
 import useSliderMouseEvents from "@/hooks/slider/useSliderMouseEvents.ts";
-import { SliderMouseHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseHook } from "@/globals/models/types/SliderMouseTypes.ts";
 import useSliderMouseEventOnDraggingChange from "@/hooks/slider/subhooks/useSliderMouseEventOnDraggingChange.ts";
 import useSliderMouseEventTimeout from "@/hooks/slider/subhooks/useSliderMouseEventTimeout.ts";
 import useSliderMouseEventUpdate from "@/hooks/slider/subhooks/useSliderMouseEventUpdate.ts";

@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { SliderPositionHook } from "@/globals/types/SliderPositionTypes.ts";
+import { SliderPositionHook } from "@/globals/models/types/SliderPositionTypes.ts";
 
 const useSliderPosition = (
   currentValue: number,

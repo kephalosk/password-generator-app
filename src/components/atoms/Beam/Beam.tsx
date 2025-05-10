@@ -1,6 +1,6 @@
 import "./Beam.scss";
 import React, { ReactElement } from "react";
-import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
+import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
 
 export interface BeamProps {
   color?: BeamColorEnum;

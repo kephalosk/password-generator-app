@@ -1,5 +1,5 @@
-import { OptionEnum } from "@/globals/constants/OptionEnum.ts";
-import { OptionKeyEnum } from "@/globals/constants/OptionKeyEnum.ts";
+import { OptionEnum } from "@/globals/models/enums/OptionEnum.ts";
+import { OptionKeyEnum } from "@/globals/models/enums/OptionKeyEnum.ts";
 
 export interface OptionItem {
   key: OptionKeyEnum;

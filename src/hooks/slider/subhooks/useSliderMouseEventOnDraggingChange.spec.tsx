@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderMouseOnDraggingChangeHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseOnDraggingChangeHook } from "@/globals/models/types/SliderMouseTypes.ts";
 import useSliderMouseEventOnDraggingChange from "@/hooks/slider/subhooks/useSliderMouseEventOnDraggingChange.ts";
 
 const testComponentDataTestId: string = "test-component";

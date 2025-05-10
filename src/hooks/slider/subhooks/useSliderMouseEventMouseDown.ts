@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { SliderMouseMouseDownHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseMouseDownHook } from "@/globals/models/types/SliderMouseTypes.ts";
 
 const useSliderMouseEventMouseDown = (
   onDraggingChange: (newDragging: boolean) => void,

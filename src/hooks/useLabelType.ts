@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
+import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import {
   EMPTY_CHECKBOX_LABEL_TEXT,
   EMPTY_HEADER_LABEL_TEXT,

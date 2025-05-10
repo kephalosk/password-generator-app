@@ -5,7 +5,7 @@ import {
   CHARACTER_LENGTH_MAX_VALUE,
   CHARACTER_LENGTH_MIN_VALUE,
 } from "@/globals/config.ts";
-import { SliderPositionHook } from "@/globals/types/SliderPositionTypes.ts";
+import { SliderPositionHook } from "@/globals/models/types/SliderPositionTypes.ts";
 
 const currentValueMock: number = CHARACTER_LENGTH_MIN_VALUE;
 const maxValueMock: number = CHARACTER_LENGTH_MAX_VALUE;

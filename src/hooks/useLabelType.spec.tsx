@@ -1,4 +1,4 @@
-import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
+import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import {
   EMPTY_CHECKBOX_LABEL_TEXT,
   EMPTY_UPPERCASE_LABEL_TEXT,

@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { SliderKeyboardFocusHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardFocusHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 
 const useSliderKeyboardEventOnFocusChange = (): SliderKeyboardFocusHook => {
   const [isFocused, setIsFocused] = useState<boolean>(false);

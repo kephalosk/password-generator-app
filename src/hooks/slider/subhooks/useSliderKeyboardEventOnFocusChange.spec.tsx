@@ -1,7 +1,7 @@
 import useSliderKeyboardEventOnFocusChange from "@/hooks/slider/subhooks/useSliderKeyboardEventOnFocusChange.ts";
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderKeyboardFocusHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardFocusHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 
 const testComponentFocusButton: string = "focus-button";
 const testComponentBlurButton: string = "blur-button";

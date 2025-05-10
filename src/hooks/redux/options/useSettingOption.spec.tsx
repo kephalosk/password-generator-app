@@ -9,7 +9,7 @@ import {
   setSymbolsOption,
   setUppercaseOption,
 } from "@/redux/slices/optionSlice.ts";
-import { OptionKeyEnum } from "@/globals/constants/OptionKeyEnum.ts";
+import { OptionKeyEnum } from "@/globals/models/enums/OptionKeyEnum.ts";
 
 jest.mock("react-redux", (): { useDispatch: jest.Mock } => ({
   useDispatch: jest.fn(),

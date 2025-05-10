@@ -1,6 +1,6 @@
 import "./PasswordContainer.scss";
 import Label from "../../atoms/Label/Label";
-import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
+import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import {
   COPY_ICON_ALT_TEXT,
   COPY_TEXT,

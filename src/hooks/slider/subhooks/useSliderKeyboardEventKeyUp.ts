@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { SliderKeyboardKeyUpHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardKeyUpHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 
 const useSliderKeyboardEventKeyUp = (
   onFocusChange: (newFocus: boolean) => void,

@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import useSliderKeyboardEventKeyUp from "@/hooks/slider/subhooks/useSliderKeyboardEventKeyUp.ts";
-import { SliderKeyboardKeyUpHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardKeyUpHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 
 const testComponentDataTestId: string = "test-component";
 const onFocusChangeMock: jest.Mock = jest.fn();

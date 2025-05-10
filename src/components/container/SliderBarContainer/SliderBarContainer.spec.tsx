@@ -14,9 +14,9 @@ import {
 import useSliderPosition from "@/hooks/slider/useSliderPosition.ts";
 import useSliderMouseEvents from "@/hooks/slider/useSliderMouseEvents.ts";
 import useSliderKeyboardEvents from "@/hooks/slider/useSliderKeyboardEvents.ts";
-import { SliderPositionHook } from "@/globals/types/SliderPositionTypes.ts";
-import { SliderMouseHook } from "@/globals/types/SliderMouseTypes.ts";
-import { SliderKeyboardHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderPositionHook } from "@/globals/models/types/SliderPositionTypes.ts";
+import { SliderMouseHook } from "@/globals/models/types/SliderMouseTypes.ts";
+import { SliderKeyboardHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 
 const sliderBarDataTestId: string = "slider-bar";
 jest.mock(

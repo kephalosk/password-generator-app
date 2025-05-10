@@ -1,5 +1,5 @@
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
-import { BeamColorEnum } from "@/globals/constants/BeamColorEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
+import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
 
 const getBeamColorFromSecurityLevel = (
   securityLevel: SecurityLevelEnum,

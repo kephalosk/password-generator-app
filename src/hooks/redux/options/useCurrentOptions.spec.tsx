@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import useCurrentOptions, {
   selectLowercaseValue,
   selectNumbersValue,
@@ -10,7 +10,7 @@ import useCurrentOptions, {
 } from "@/hooks/redux/options/useCurrentOptions.ts";
 import { OptionItem, OptionItems } from "@/globals/constants/OptionItems.ts";
 import { ReactElement } from "react";
-import { OptionKeyEnum } from "@/globals/constants/OptionKeyEnum.ts";
+import { OptionKeyEnum } from "@/globals/models/enums/OptionKeyEnum.ts";
 
 jest.mock(
   "react-redux",

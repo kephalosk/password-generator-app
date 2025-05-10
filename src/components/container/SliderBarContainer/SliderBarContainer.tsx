@@ -7,7 +7,7 @@ import { OFFSET_ADJUSTER } from "@/globals/config.ts";
 import useSliderMouseEvents from "@/hooks/slider/useSliderMouseEvents.ts";
 import useSliderKeyboardEvents from "@/hooks/slider/useSliderKeyboardEvents.ts";
 import useSliderPosition from "@/hooks/slider/useSliderPosition.ts";
-import { SliderKeyboardHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 
 export interface SliderBarContainerProps {
   currentValue: number;

@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { SliderMouseMouseMoveHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseMouseMoveHook } from "@/globals/models/types/SliderMouseTypes.ts";
 
 const useSliderMouseEventMouseMove = (
   isDragging: boolean,

@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from "react";
-import { SliderMouseUpdateHook } from "@/globals/types/SliderMouseTypes.ts";
+import { SliderMouseUpdateHook } from "@/globals/models/types/SliderMouseTypes.ts";
 import correctValuesThatAreTooSmall from "@/globals/utils/correctValuesThatAreTooSmall.ts";
 import isNewPositionValid from "@/globals/utils/isNewPositionValid.ts";
 import getNewPositionAbsolute from "@/globals/helper/slider/getNewPositionAbsolute.ts";

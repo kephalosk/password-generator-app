@@ -1,5 +1,5 @@
-import { SecurityLevelEnum } from "@/globals/constants/SecurityLevelEnum.ts";
-import { SecurityLabelEnum } from "@/globals/constants/SecurityLabelEnum.ts";
+import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
+import { SecurityLabelEnum } from "@/globals/models/enums/SecurityLabelEnum.ts";
 import { useMemo } from "react";
 
 const useSecurityLabel = (

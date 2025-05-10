@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SliderKeyboardKeyDownHook } from "@/globals/types/SliderKeyboardTypes.ts";
+import { SliderKeyboardKeyDownHook } from "@/globals/models/types/SliderKeyboardTypes.ts";
 import useSliderKeyboardEventKeyDown from "@/hooks/slider/subhooks/useSliderKeyboardEventKeyDown.ts";
 import isCharacterLengthGoingOutOfBounce from "@/globals/helper/slider/isCharacterLengthGoingOutOfBounce.ts";
 import setNewPosition from "@/globals/helper/slider/setNewPosition.ts";
