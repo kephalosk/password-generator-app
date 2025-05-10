@@ -1,12 +1,10 @@
 import React, { useRef, useCallback } from "react";
+import { KeyClickBypassHook } from "@/globals/types/KeyClickBypassTypes.ts";
 
 const useKeyClickBypass = (
   action: () => void,
   triggerKey: string = "Enter",
-): {
-  handleKeyDown: (event: React.KeyboardEvent<HTMLElement>) => void;
-  handleClick: () => void;
-} => {
+): KeyClickBypassHook => {
   const keyActivatedRef: React.RefObject<boolean> = useRef(false);
 
   const handleKeyDown = useCallback(
