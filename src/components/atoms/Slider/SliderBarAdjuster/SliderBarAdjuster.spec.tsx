@@ -26,20 +26,25 @@ describe("SliderBarAdjuster Component", (): void => {
     expect(element).toBeInTheDocument();
   });
 
-  it.each([[true], [false]])(
-    "handles class clicked when passed prop isClicked is %s",
-    (isClicked: boolean): void => {
-      const { container } = setup({ isClicked });
+  it("handles class clicked when passed prop isClicked is true", (): void => {
+    const { container } = setup({ isClicked: true });
 
-      const element: HTMLElement | null =
-        container.querySelector(".sliderBarAdjuster");
+    const element: HTMLElement | null =
+      container.querySelector(".sliderBarAdjuster");
 
-      expect(element).toBeInTheDocument();
-      if (isClicked) {
-        expect(element).toHaveClass("clicked");
-      } else {
-        expect(element).not.toHaveClass("clicked");
-      }
-    },
-  );
+    expect(element).toBeInTheDocument();
+    if (isClicked) {
+      expect(element).toHaveClass("clicked");
+    }
+  });
+
+  it("handles class clicked when passed prop isClicked is false", (): void => {
+    const { container } = setup({ isClicked: false });
+
+    const element: HTMLElement | null =
+      container.querySelector(".sliderBarAdjuster");
+
+    expect(element).toBeInTheDocument();
+    expect(element).not.toHaveClass("clicked");
+  });
 });
