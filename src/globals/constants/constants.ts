@@ -20,6 +20,7 @@ export const COPY_TEXT: string = "copied";
 export const STRENGTH_LABEL: string = "strength";
 
 export const COPY_ICON_ALT_TEXT: string = "image of Copy Icon";
+export const ARROW_RIGHT_ICON_ALT_TEXT: string = "image of Arrow Right Icon";
 
 export const BUTTON_ARIA_LABEL_PREFIX: string = "button for: ";
 export const BUTTON_TEXT: string = "generate";

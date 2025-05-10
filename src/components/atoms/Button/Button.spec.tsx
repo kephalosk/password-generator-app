@@ -1,8 +1,15 @@
 import { fireEvent, render } from "@testing-library/react";
 import Button, { ButtonProps } from "./Button.tsx";
-import { BUTTON_ARIA_LABEL_PREFIX } from "@/globals/constants/constants.ts";
+import {
+  ARROW_RIGHT_ICON_ALT_TEXT,
+  BUTTON_ARIA_LABEL_PREFIX,
+} from "@/globals/constants/constants.ts";
 import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
 import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
+import {
+  ARROW_RIGHT_ICON_D,
+  ARROW_RIGHT_ICON_SRC,
+} from "@/globals/constants/ressources.ts";
 
 jest.mock(
   "@/hooks/useKeyClickBypass",
@@ -84,7 +91,36 @@ describe("Button", (): void => {
     );
     expect(element).toHaveAttribute("tabindex", "0");
     expect(element).toHaveAttribute("type", "button");
+  });
+
+  it("renders span buttonText", (): void => {
+    const { container } = setup();
+
+    const element: HTMLElement | null = container.querySelector(".buttonText");
+
     expect(element).toHaveTextContent(text);
+  });
+
+  it("renders svg buttonIcon", (): void => {
+    const { container } = setup();
+
+    const element: HTMLElement | null = container.querySelector(".buttonIcon");
+
+    expect(element).toHaveAttribute(
+      "aria-label",
+      `${ARROW_RIGHT_ICON_ALT_TEXT}`,
+    );
+    expect(element).toHaveAttribute("aria-hidden", "true");
+    expect(element).toHaveAttribute("xmlns", `${ARROW_RIGHT_ICON_SRC}`);
+  });
+
+  it("renders path buttonIconPath", (): void => {
+    const { container } = setup();
+
+    const element: HTMLElement | null =
+      container.querySelector(".buttonIconPath");
+
+    expect(element).toHaveAttribute("d", `${ARROW_RIGHT_ICON_D}`);
   });
 
   it("calls handleClick on click", (): void => {

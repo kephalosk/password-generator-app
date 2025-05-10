@@ -1,7 +1,10 @@
 import "./Button.scss";
 import React, { ReactElement, useRef } from "react";
 import clsx from "clsx";
-import { BUTTON_ARIA_LABEL_PREFIX } from "@/globals/constants/constants.ts";
+import {
+  ARROW_RIGHT_ICON_ALT_TEXT,
+  BUTTON_ARIA_LABEL_PREFIX,
+} from "@/globals/constants/constants.ts";
 import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
 import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
 
@@ -40,7 +43,18 @@ const Button: React.FC<ButtonProps> = React.memo(
         tabIndex={isDisabled ? -1 : 0}
         disabled={isDisabled}
       >
-        {text}
+        <span className="buttonText">{text}</span>
+        <svg
+          className="buttonIcon"
+          aria-label={ARROW_RIGHT_ICON_ALT_TEXT}
+          aria-hidden={true}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="buttonIconPath"
+            d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+          />
+        </svg>
       </button>
     );
   },
