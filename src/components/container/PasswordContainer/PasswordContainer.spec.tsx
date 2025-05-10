@@ -87,5 +87,6 @@ describe("", (): void => {
     expect(element).toHaveAttribute("alt", COPY_ICON_ALT_TEXT);
     expect(element).toHaveAttribute("aria-label", COPY_ICON_ALT_TEXT);
     expect(element).toHaveAttribute("aria-hidden", "false");
+    expect(element).toHaveAttribute("tabIndex", "0");
   });
 });
