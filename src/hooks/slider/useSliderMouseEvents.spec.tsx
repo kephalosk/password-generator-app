@@ -1,47 +1,111 @@
-import React, { useState } from "react";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import React from "react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { mockedRefObjectDiv } from "@/jest/fixtures/RefObjectFixtures.ts";
 import useSliderMouseEvents from "@/hooks/slider/useSliderMouseEvents.ts";
-import {
-  CHARACTER_LENGTH_MAX_VALUE,
-  CHARACTER_LENGTH_MIN_VALUE,
-} from "@/globals/config.ts";
-import preventZeroAsDivisor from "@/globals/utils/preventZeroAsDivisor.ts";
+import { SliderMouseHook } from "@/globals/types/SliderMouseTypes.ts";
+import useSliderMouseEventOnDraggingChange from "@/hooks/slider/subhooks/useSliderMouseEventOnDraggingChange.ts";
+import useSliderMouseEventTimeout from "@/hooks/slider/subhooks/useSliderMouseEventTimeout.ts";
+import useSliderMouseEventUpdate from "@/hooks/slider/subhooks/useSliderMouseEventUpdate.ts";
+import useSliderMouseEventMouseDown from "@/hooks/slider/subhooks/useSliderMouseEventMouseDown.ts";
+import useSliderMouseEventMouseUp from "@/hooks/slider/subhooks/useSliderMouseEventMouseUp.ts";
+import useSliderMouseEventMouseMove from "@/hooks/slider/subhooks/useSliderMouseEventMouseMove.ts";
+import useSliderMouseEventListener from "@/hooks/slider/subhooks/useSliderMouseEventListener.ts";
 
-const positionPercentInit: number = 0;
-const isDraggingMock: string = "dragging";
-const propagateNewValueMock: jest.Mock = jest.fn();
-const minValue: number = CHARACTER_LENGTH_MIN_VALUE;
-const maxValue: number = CHARACTER_LENGTH_MAX_VALUE;
+const setTimeoutIdMock: jest.Mock = jest.fn();
+const clearTimeoutIdMock: jest.Mock = jest.fn();
+jest.mock(
+  "@/hooks/slider/subhooks/useSliderMouseEventTimeout.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+      setTimeoutId: setTimeoutIdMock,
+      clearTimeoutId: clearTimeoutIdMock,
+    })),
+  }),
+);
 
-const testComponentDataTestId: string = "test-component";
-const TestComponent: React.FC = (): React.ReactElement => {
-  const [positionPercent, setPositionPercent] =
-    useState<number>(positionPercentInit);
+const isDraggingMock: boolean = true;
+const onDraggingChangeMock: jest.Mock = jest.fn();
+jest.mock(
+  "@/hooks/slider/subhooks/useSliderMouseEventOnDraggingChange.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+      isDragging: isDraggingMock,
+      onDraggingChange: onDraggingChangeMock,
+    })),
+  }),
+);
 
-  const { handleMouseDown, handleClick, isDragging, containerRef } =
-    useSliderMouseEvents(
-      minValue,
-      maxValue,
-      propagateNewValueMock,
-      (newPositionPercent: number) => setPositionPercent(newPositionPercent),
-    );
+const handleClickMock: jest.Mock = jest.fn();
+const containerRefMock: React.RefObject<HTMLDivElement | null> =
+  mockedRefObjectDiv;
+const updatePositionMock: jest.Mock = jest.fn();
+jest.mock(
+  "@/hooks/slider/subhooks/useSliderMouseEventUpdate.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+      handleClick: handleClickMock,
+      containerRef: containerRefMock,
+      updatePosition: updatePositionMock,
+    })),
+  }),
+);
 
-  return (
-    <div
-      ref={containerRef}
-      data-testid={testComponentDataTestId}
-      onMouseDown={handleMouseDown}
-      onClick={handleClick}
-      className={`${isDragging ? isDraggingMock : ""}`}
-      style={{ width: "100px", height: "100px" }}
-    >
-      {positionPercent}
-    </div>
-  );
-};
+const handleMouseDownMock: jest.Mock = jest.fn();
+jest.mock(
+  "@/hooks/slider/subhooks/useSliderMouseEventMouseDown.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+      handleMouseDown: handleMouseDownMock,
+    })),
+  }),
+);
+
+const handleMouseUpMock: jest.Mock = jest.fn();
+jest.mock(
+  "@/hooks/slider/subhooks/useSliderMouseEventMouseUp.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+      handleMouseUp: handleMouseUpMock,
+    })),
+  }),
+);
+
+const handleMouseMoveMock: jest.Mock = jest.fn();
+jest.mock(
+  "@/hooks/slider/subhooks/useSliderMouseEventMouseMove.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+      handleMouseMove: handleMouseMoveMock,
+    })),
+  }),
+);
 
 jest.mock(
-  "@/globals/utils/preventZeroAsDivisor.ts",
+  "@/hooks/slider/subhooks/useSliderMouseEventListener.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;
@@ -51,160 +115,171 @@ jest.mock(
   }),
 );
 
-describe("useSliderMouseEvents hook", (): void => {
-  const setup = (): { container: HTMLElement } => {
-    return render(<TestComponent />);
+const minValue: number = 50;
+const maxValue: number = 0;
+const propagateNewValueMock: jest.Mock = jest.fn();
+const onPositionChangeMock: jest.Mock = jest.fn();
+
+const draggedString: string = "Dragged";
+const notDraggedString: string = "NotDragged";
+
+const testComponentDataTestId: string = "test-component";
+const TestComponent: React.FC = () => {
+  const {
+    isDragging,
+    handleMouseDown,
+    handleClick,
+    containerRef,
+  }: SliderMouseHook = useSliderMouseEvents(
+    minValue,
+    maxValue,
+    propagateNewValueMock,
+    onPositionChangeMock,
+  );
+
+  return (
+    <div
+      ref={containerRef}
+      data-testid={testComponentDataTestId}
+      onClick={handleClick}
+      onMouseDown={handleMouseDown}
+    >
+      {isDragging ? draggedString : notDraggedString}
+    </div>
+  );
+};
+
+describe("useSliderMouseEvents Hook", (): void => {
+  const setup = (): void => {
+    render(<TestComponent />);
   };
 
-  const triggerTimeout = (): HTMLElement => {
-    setup();
-    const sliderContainer: HTMLElement = screen.getByTestId(
-      testComponentDataTestId,
-    );
-    fireEvent.mouseDown(sliderContainer, { clientX: triggerSmallValue });
-    fireEvent.mouseMove(sliderContainer, { clientX: triggerMaxValue });
-    return sliderContainer;
-  };
-
-  const triggerSmallValue: number = 0.8;
-  const triggerMaxValue: number = 1;
-  const maxValuePercent: number = 100;
-
-  const clearTimeoutMock: jest.Mock = jest.fn();
-
-  beforeEach((): void => {
-    (preventZeroAsDivisor as jest.Mock).mockReturnValue(triggerMaxValue);
-  });
-
-  it("renders TestComponent", (): void => {
+  it("sets isDragged correctly", () => {
     setup();
 
     const element: HTMLElement = screen.getByTestId(testComponentDataTestId);
 
-    expect(element).toBeInTheDocument();
+    expect(element.innerHTML).toEqual(draggedString);
+    expect(useSliderMouseEventOnDraggingChange).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventOnDraggingChange).toHaveBeenCalledWith();
+    expect(useSliderMouseEventOnDraggingChange).toHaveReturnedWith({
+      isDragging: isDraggingMock,
+      onDraggingChange: onDraggingChangeMock,
+    });
   });
 
-  it("initializes positionPercent to positionPercentInit", (): void => {
+  it("calls handleMouseDown when MouseDown is clicked", (): void => {
     setup();
 
     const element: HTMLElement = screen.getByTestId(testComponentDataTestId);
-    expect(element).toHaveTextContent(`${positionPercentInit}`);
+    fireEvent.mouseDown(element);
+
+    expect(handleMouseDownMock).toHaveBeenCalledTimes(1);
+    expect(handleMouseDownMock).toHaveBeenCalledWith(
+      expect.objectContaining({ _reactName: "onMouseDown" }),
+    );
+    expect(useSliderMouseEventMouseDown).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventMouseDown).toHaveBeenCalledWith(
+      onDraggingChangeMock,
+    );
+    expect(useSliderMouseEventMouseDown).toHaveReturnedWith({
+      handleMouseDown: handleMouseDownMock,
+    });
   });
 
-  it("changes the position on mouse click", async (): Promise<void> => {
+  it("calls handleClick when clicked", (): void => {
     setup();
 
-    const sliderContainer: HTMLElement = screen.getByTestId(
-      testComponentDataTestId,
-    );
-    fireEvent.click(sliderContainer, {
-      clientX: triggerMaxValue,
-    });
+    const element: HTMLElement = screen.getByTestId(testComponentDataTestId);
+    fireEvent.click(element);
 
-    expect(sliderContainer).toHaveTextContent(`${maxValuePercent}`);
+    expect(handleClickMock).toHaveBeenCalledTimes(1);
+    expect(handleClickMock).toHaveBeenCalledWith(
+      expect.objectContaining({ _reactName: "onClick" }),
+    );
+    expect(useSliderMouseEventUpdate).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventUpdate).toHaveBeenCalledWith(
+      minValue,
+      maxValue,
+      propagateNewValueMock,
+      onPositionChangeMock,
+    );
+    expect(useSliderMouseEventUpdate).toHaveReturnedWith({
+      handleClick: handleClickMock,
+      containerRef: containerRefMock,
+      updatePosition: updatePositionMock,
+    });
   });
 
-  it("sets value to minValue if value is too small", async (): Promise<void> => {
-    const valueTooSmall: number = 0.3;
-    const minValuePercent: number = (minValue / maxValue) * 100;
+  it("sets containerRef", (): void => {
     setup();
 
-    const sliderContainer: HTMLElement = screen.getByTestId(
-      testComponentDataTestId,
-    );
-    fireEvent.click(sliderContainer, {
-      clientX: valueTooSmall,
-    });
+    const element: HTMLElement = screen.getByTestId(testComponentDataTestId);
+    fireEvent.click(element);
 
-    expect(sliderContainer).toHaveTextContent(`${minValuePercent}`);
+    expect(containerRefMock.current).toBe(element);
+    expect(useSliderMouseEventUpdate).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventUpdate).toHaveBeenCalledWith(
+      minValue,
+      maxValue,
+      propagateNewValueMock,
+      onPositionChangeMock,
+    );
+    expect(useSliderMouseEventUpdate).toHaveReturnedWith({
+      handleClick: handleClickMock,
+      containerRef: containerRefMock,
+      updatePosition: updatePositionMock,
+    });
   });
 
-  it("returns if value is too big", async (): Promise<void> => {
-    const valueTooBig: number = 100;
+  it("calls transitive private subhook useSliderMouseEventTimeout", (): void => {
     setup();
 
-    const sliderContainer: HTMLElement = screen.getByTestId(
-      testComponentDataTestId,
-    );
-    fireEvent.click(sliderContainer, {
-      clientX: valueTooBig,
+    expect(useSliderMouseEventTimeout).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventTimeout).toHaveBeenCalledWith();
+    expect(useSliderMouseEventTimeout).toHaveReturnedWith({
+      setTimeoutId: setTimeoutIdMock,
+      clearTimeoutId: clearTimeoutIdMock,
     });
-
-    expect(sliderContainer).toHaveTextContent(`${positionPercentInit}`);
   });
 
-  it("updates position on mouse move", async (): Promise<void> => {
+  it("calls transitive private subhook useSliderMouseEventMouseUp", (): void => {
     setup();
 
-    const sliderContainer: HTMLElement = screen.getByTestId(
-      testComponentDataTestId,
+    expect(useSliderMouseEventMouseUp).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventMouseUp).toHaveBeenCalledWith(
+      onDraggingChangeMock,
+      clearTimeoutIdMock,
     );
-
-    fireEvent.mouseDown(sliderContainer, {
-      clientX: triggerSmallValue,
-    });
-
-    fireEvent.mouseMove(sliderContainer, {
-      clientX: triggerMaxValue,
-    });
-
-    await waitFor((): void => {
-      expect(sliderContainer).toHaveTextContent(`${maxValuePercent}`);
+    expect(useSliderMouseEventMouseUp).toHaveReturnedWith({
+      handleMouseUp: handleMouseUpMock,
     });
   });
 
-  it("stops dragging on mouse up", (): void => {
+  it("calls transitive private subhook useSliderMouseEventMouseMove", (): void => {
     setup();
 
-    const sliderContainer: HTMLElement = screen.getByTestId(
-      testComponentDataTestId,
+    expect(useSliderMouseEventMouseMove).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventMouseMove).toHaveBeenCalledWith(
+      isDraggingMock,
+      clearTimeoutIdMock,
+      updatePositionMock,
+      setTimeoutIdMock,
     );
-
-    fireEvent.mouseDown(sliderContainer, {
-      clientX: triggerMaxValue,
+    expect(useSliderMouseEventMouseMove).toHaveReturnedWith({
+      handleMouseMove: handleMouseMoveMock,
     });
-
-    expect(sliderContainer).toHaveClass(isDraggingMock);
-
-    fireEvent.mouseUp(sliderContainer);
-
-    expect(sliderContainer).not.toHaveClass(isDraggingMock);
   });
 
-  it("propagates value change", () => {
+  it("calls transitive private subhook useSliderMouseEventListener", (): void => {
     setup();
 
-    const sliderContainer: HTMLElement = screen.getByTestId(
-      testComponentDataTestId,
+    expect(useSliderMouseEventListener).toHaveBeenCalledTimes(1);
+    expect(useSliderMouseEventListener).toHaveBeenCalledWith(
+      isDraggingMock,
+      handleMouseMoveMock,
+      handleMouseUpMock,
     );
-
-    fireEvent.click(sliderContainer, {
-      clientX: triggerMaxValue,
-    });
-
-    expect(propagateNewValueMock).toHaveBeenCalledTimes(1);
-    expect(propagateNewValueMock).toHaveBeenCalledWith(maxValue);
-  });
-
-  it("calls clearTimeout when mouse up is triggered", (): void => {
-    jest.useFakeTimers();
-    const sliderContainer: HTMLElement = triggerTimeout();
-
-    global.clearTimeout = clearTimeoutMock;
-    fireEvent.mouseUp(sliderContainer);
-
-    expect(clearTimeoutMock).toHaveBeenCalled();
-    jest.useRealTimers();
-  });
-
-  it("calls clearTimeout when mouse move is triggered", (): void => {
-    jest.useFakeTimers();
-    const sliderContainer: HTMLElement = triggerTimeout();
-
-    global.clearTimeout = clearTimeoutMock;
-    fireEvent.mouseMove(sliderContainer, { clientX: triggerSmallValue });
-
-    expect(clearTimeoutMock).toHaveBeenCalled();
-    jest.useRealTimers();
+    expect(useSliderMouseEventListener).toHaveReturnedWith();
   });
 });
