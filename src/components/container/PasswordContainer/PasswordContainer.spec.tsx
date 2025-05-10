@@ -3,12 +3,12 @@ import { ReactElement } from "react";
 import { render } from "@testing-library/react";
 import PasswordContainer from "@/components/container/PasswordContainer/PasswordContainer.tsx";
 import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
-import { COPY_ICON_SRC } from "@/globals/constants/ressources.ts";
+import { COPY_ICON_SRC } from "@/globals/constants/Ressources.ts";
 import {
   COPY_ICON_ALT_TEXT,
   COPY_TEXT,
   EMPTY_STRING,
-} from "@/globals/constants/constants.ts";
+} from "@/globals/constants/Constants.ts";
 
 const labelDataTestId: string = "label";
 jest.mock(

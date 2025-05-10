@@ -11,7 +11,7 @@ import {
   ZERO_LABEL_TEXT,
   EMPTY_STRENGTH_BEAM_LABEL_TEXT,
   EMPTY_COPY_LABEL_TEXT,
-} from "@/globals/constants/constants.ts";
+} from "@/globals/constants/Constants.ts";
 import React, { ReactElement } from "react";
 import useLabelType from "@/hooks/useLabelType.ts";
 import { render, screen } from "@testing-library/react";

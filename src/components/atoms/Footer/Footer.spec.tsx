@@ -5,11 +5,11 @@ import {
   FRONTEND_MENTOR_PREFIX,
   FRONTEND_MENTOR_SUFFIX,
   GITHUB_PROFILE_NAME,
-} from "@/globals/constants/constants.ts";
+} from "@/globals/constants/Constants.ts";
 import {
   FRONTEND_MENTOR_SRC,
   GITHUB_SRC,
-} from "@/globals/constants/ressources.ts";
+} from "@/globals/constants/Ressources.ts";
 
 describe("Footer Component", (): void => {
   const setup = (): { container: HTMLElement } => {

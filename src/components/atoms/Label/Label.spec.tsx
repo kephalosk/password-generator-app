@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import useWarnIfEmptyText from "@/hooks/useWarnIfEmptyText.ts";
 import useLabelType from "@/hooks/useLabelType.ts";
 import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
-import { EMPTY_STRING } from "@/globals/constants/constants.ts";
+import { EMPTY_STRING } from "@/globals/constants/Constants.ts";
 
 jest.mock(
   "@/hooks/useLabelType",

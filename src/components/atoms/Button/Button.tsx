@@ -4,7 +4,7 @@ import clsx from "clsx";
 import {
   ARROW_RIGHT_ICON_ALT_TEXT,
   BUTTON_ARIA_LABEL_PREFIX,
-} from "@/globals/constants/constants.ts";
+} from "@/globals/constants/Constants.ts";
 import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
 import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
 

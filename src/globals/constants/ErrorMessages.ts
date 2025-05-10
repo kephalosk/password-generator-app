@@ -1,4 +1,4 @@
-import { DOT } from "@/globals/constants/constants.ts";
+import { DOT } from "@/globals/constants/Constants.ts";
 
 const ERROR_MESSAGE_MAXVALUE_LESS_0_PREFIX: string = "Invalid maxValue: ";
 const ERROR_MESSAGE_MAXVALUE_LESS_0_SUFFIX: string =

@@ -8,7 +8,7 @@ import { SecurityLabelEnum } from "@/globals/models/enums/SecurityLabelEnum.ts";
 import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import Label from "@/components/atoms/Label/Label.tsx";
 import BeamContainer from "@/components/container/BeamContainer/BeamContainer.tsx";
-import { STRENGTH_LABEL } from "@/globals/constants/constants.ts";
+import { STRENGTH_LABEL } from "@/globals/constants/Constants.ts";
 
 const labelTestId: string = "label";
 jest.mock(

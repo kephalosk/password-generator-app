@@ -12,7 +12,7 @@ import {
   ZERO_LABEL_TEXT,
   EMPTY_STRENGTH_BEAM_LABEL_TEXT,
   EMPTY_COPY_LABEL_TEXT,
-} from "@/globals/constants/constants.ts";
+} from "@/globals/constants/Constants.ts";
 
 const useLabelType = (
   type: LabelTypeEnum,

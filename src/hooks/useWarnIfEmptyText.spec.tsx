@@ -5,7 +5,7 @@ import {
   EMPTY_TEXT_WARNING_MESSAGE,
   ENVIRONMENT_DEVELOPMENT,
   ENVIRONMENT_PRODUCTION,
-} from "@/globals/constants/constants.ts";
+} from "@/globals/constants/Constants.ts";
 
 jest.spyOn(console, "warn").mockImplementation((): void | null => null);
 

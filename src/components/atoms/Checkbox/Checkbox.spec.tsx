@@ -2,8 +2,8 @@ import { render } from "@testing-library/react";
 import Checkbox, {
   CheckboxProps,
 } from "@/components/atoms/Checkbox/Checkbox.tsx";
-import { CHECK_ICON_SRC } from "@/globals/constants/ressources.ts";
-import { CHECKBOX_ICON_ALT_TEXT } from "@/globals/constants/constants.ts";
+import { CHECK_ICON_SRC } from "@/globals/constants/Ressources.ts";
+import { CHECKBOX_ICON_ALT_TEXT } from "@/globals/constants/Constants.ts";
 
 describe("Checkbox Component", (): void => {
   const isChecked: boolean = true;

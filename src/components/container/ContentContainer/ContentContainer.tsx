@@ -3,7 +3,7 @@ import SliderContainer from "@/components/container/SliderContainer/SliderContai
 import OptionContainer from "@/components/container/OptionContainer/OptionContainer.tsx";
 import StrengthContainer from "@/components/container/StrengthContainer/StrengthContainer.tsx";
 import Button from "@/components/atoms/Button/Button.tsx";
-import { BUTTON_TEXT } from "@/globals/constants/constants.ts";
+import { BUTTON_TEXT } from "@/globals/constants/Constants.ts";
 
 const ContentContainer = () => {
   return (

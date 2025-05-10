@@ -5,7 +5,7 @@ import Button from "@/components/atoms/Button/Button.tsx";
 import { ReactElement } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import ContentContainer from "@/components/container/ContentContainer/ContentContainer.tsx";
-import { BUTTON_TEXT } from "@/globals/constants/constants.ts";
+import { BUTTON_TEXT } from "@/globals/constants/Constants.ts";
 
 const sliderContainerDataTestId: string = "slider-container";
 jest.mock(

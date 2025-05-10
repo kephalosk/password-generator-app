@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 import Label from "@/components/atoms/Label/Label.tsx";
 import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import BeamContainer from "@/components/container/BeamContainer/BeamContainer.tsx";
-import { STRENGTH_LABEL } from "@/globals/constants/constants.ts";
+import { STRENGTH_LABEL } from "@/globals/constants/Constants.ts";
 import useSecurityLevel from "@/hooks/redux/useSecurityLevel.ts";
 import useSecurityLabel from "@/hooks/useSecurityLabel.ts";
 

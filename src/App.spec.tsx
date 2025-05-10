@@ -1,5 +1,5 @@
 import Headline from "@/components/atoms/Headline/Headline.tsx";
-import { HEADLINE_TEXT } from "@/globals/constants/constants.ts";
+import { HEADLINE_TEXT } from "@/globals/constants/Constants.ts";
 import PasswordContainer from "@/components/container/PasswordContainer/PasswordContainer.tsx";
 import ContentContainer from "@/components/container/ContentContainer/ContentContainer.tsx";
 import Footer from "@/components/atoms/Footer/Footer.tsx";

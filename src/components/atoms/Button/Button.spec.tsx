@@ -3,13 +3,13 @@ import Button, { ButtonProps } from "./Button.tsx";
 import {
   ARROW_RIGHT_ICON_ALT_TEXT,
   BUTTON_ARIA_LABEL_PREFIX,
-} from "@/globals/constants/constants.ts";
+} from "@/globals/constants/Constants.ts";
 import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
 import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
 import {
   ARROW_RIGHT_ICON_D,
   ARROW_RIGHT_ICON_SRC,
-} from "@/globals/constants/ressources.ts";
+} from "@/globals/constants/Ressources.ts";
 
 jest.mock(
   "@/hooks/useKeyClickBypass",

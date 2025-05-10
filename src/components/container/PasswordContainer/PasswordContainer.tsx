@@ -5,8 +5,8 @@ import {
   COPY_ICON_ALT_TEXT,
   COPY_TEXT,
   EMPTY_STRING,
-} from "@/globals/constants/constants.ts";
-import { COPY_ICON_SRC } from "@/globals/constants/ressources.ts";
+} from "@/globals/constants/Constants.ts";
+import { COPY_ICON_SRC } from "@/globals/constants/Ressources.ts";
 
 const PasswordContainer = () => {
   return (
