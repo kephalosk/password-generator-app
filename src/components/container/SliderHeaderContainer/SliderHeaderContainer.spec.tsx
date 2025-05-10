@@ -2,11 +2,21 @@ import { ReactElement } from "react";
 import { render } from "@testing-library/react";
 import Label from "@/components/atoms/Label/Label.tsx";
 import { LabelTypeEnum } from "@/globals/constants/LabelTypeEnum.ts";
-import {
-  SLIDER_HEADER_LABEL_TEXT,
-  ZERO_LABEL_TEXT,
-} from "@/globals/constants/constants.ts";
+import { SLIDER_HEADER_LABEL_TEXT } from "@/globals/constants/constants.ts";
 import SliderHeaderContainer from "@/components/container/SliderHeaderContainer/SliderHeaderContainer.tsx";
+import useCharacterLength from "@/hooks/redux/characterLength/useCharacterLength.ts";
+
+const characterLengthMock: number = 10;
+jest.mock(
+  "@/hooks/redux/characterLength/useCharacterLength.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn((): number => characterLengthMock),
+  }),
+);
 
 const labelDataTestId: string = "label";
 jest.mock(
@@ -14,24 +24,6 @@ jest.mock(
   (): jest.Mock =>
     jest.fn((props): ReactElement => {
       return <div data-testid={labelDataTestId} className={props.type}></div>;
-    }),
-);
-
-const sliderBarValueDataTestId: string = "slider-bar-value";
-jest.mock(
-  "@/components/atoms/Slider/SliderBarValue/SliderBarValue.tsx",
-  (): jest.Mock =>
-    jest.fn((): ReactElement => {
-      return <div data-testid={sliderBarValueDataTestId}></div>;
-    }),
-);
-
-const sliderBarAdjusterDataTestId: string = "slider-bar-adjuster";
-jest.mock(
-  "@/components/atoms/Slider/SliderBarAdjuster/SliderBarAdjuster.tsx",
-  (): jest.Mock =>
-    jest.fn((): ReactElement => {
-      return <div data-testid={sliderBarAdjusterDataTestId}></div>;
     }),
 );
 
@@ -71,7 +63,10 @@ describe("SliderHeaderContainer Component", (): void => {
     expect(Label).toHaveBeenCalledTimes(2);
     expect(Label).toHaveBeenNthCalledWith(
       1,
-      { type: LabelTypeEnum.HEADER_LABEL, text: SLIDER_HEADER_LABEL_TEXT },
+      {
+        type: LabelTypeEnum.HEADER_LABEL,
+        text: SLIDER_HEADER_LABEL_TEXT,
+      },
       undefined,
     );
   });
@@ -87,8 +82,18 @@ describe("SliderHeaderContainer Component", (): void => {
     expect(Label).toHaveBeenCalledTimes(2);
     expect(Label).toHaveBeenNthCalledWith(
       2,
-      { type: LabelTypeEnum.NUMBER_LABEL, text: ZERO_LABEL_TEXT },
+      {
+        type: LabelTypeEnum.NUMBER_LABEL,
+        text: characterLengthMock.toString(),
+      },
       undefined,
     );
+  });
+
+  it("calls hook useCharacterLength", (): void => {
+    setup();
+
+    expect(useCharacterLength).toHaveBeenCalledTimes(1);
+    expect(useCharacterLength).toHaveBeenCalledWith();
   });
 });
