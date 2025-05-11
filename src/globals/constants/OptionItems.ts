@@ -1,5 +1,11 @@
 import { OptionEnum } from "@/globals/models/enums/OptionEnum.ts";
 import { OptionKeyEnum } from "@/globals/models/enums/OptionKeyEnum.ts";
+import {
+  LOWERCASE_LETTERS,
+  NUMBERS,
+  SYMBOLS,
+  UPPERCASE_LETTERS,
+} from "@/globals/constants/Characters.ts";
 
 export interface OptionItem {
   key: OptionKeyEnum;
@@ -29,3 +35,15 @@ export const OptionItems: OptionItem[] = [
     isChecked: false,
   },
 ];
+
+export const optionToCharacters: {
+  [OptionEnum.UPPERCASE_LETTERS]: string;
+  [OptionEnum.LOWERCASE_LETTERS]: string;
+  [OptionEnum.NUMBERS]: string;
+  [OptionEnum.SYMBOLS]: string;
+} = {
+  [OptionEnum.UPPERCASE_LETTERS]: UPPERCASE_LETTERS,
+  [OptionEnum.LOWERCASE_LETTERS]: LOWERCASE_LETTERS,
+  [OptionEnum.NUMBERS]: NUMBERS,
+  [OptionEnum.SYMBOLS]: SYMBOLS,
+};

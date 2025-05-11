@@ -1,19 +1,8 @@
-import { OptionItem } from "@/globals/constants/OptionItems.ts";
-import { OptionEnum } from "@/globals/models/enums/OptionEnum.ts";
 import {
-  LOWERCASE_LETTERS,
-  NUMBERS,
-  SYMBOLS,
-  UPPERCASE_LETTERS,
-} from "@/globals/constants/Characters.ts";
+  OptionItem,
+  optionToCharacters,
+} from "@/globals/constants/OptionItems.ts";
 import { ERROR_MESSAGE_MISSING_OPTION } from "@/globals/constants/ErrorMessages.ts";
-
-const optionToCharacters = {
-  [OptionEnum.UPPERCASE_LETTERS]: UPPERCASE_LETTERS,
-  [OptionEnum.LOWERCASE_LETTERS]: LOWERCASE_LETTERS,
-  [OptionEnum.NUMBERS]: NUMBERS,
-  [OptionEnum.SYMBOLS]: SYMBOLS,
-};
 
 const isEverySelectedOptionIncluded = (
   password: string,
