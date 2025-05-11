@@ -20,6 +20,7 @@ export default {
     "/src/jest",
     "/src/globals/config.ts",
     "/src/globals/constants",
+    "/src/globals/models",
     "/src/redux/fixtures",
   ],
   collectCoverage: true,
