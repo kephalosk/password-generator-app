@@ -10,6 +10,8 @@
   justify-content: center;
   row-gap: spaces.$space-16px;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
 
   @include screens.tablet-and-up{
     row-gap: spaces.$space-24px;

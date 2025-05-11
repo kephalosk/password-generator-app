@@ -8,6 +8,9 @@
   text-align: right;
   text-transform: uppercase;
   color: colors.$grey-200;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @include fonts.text-preset-3;
 
@@ -55,8 +58,13 @@
 }
 
 .passwordLabel {
+  height: 100%;
+  max-width: 100%;
   text-align: left;
   color: colors.$grey-700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @include fonts.text-preset-2;
 }
@@ -65,6 +73,9 @@
   text-align: left;
   text-transform: uppercase;
   color: colors.$grey-600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @include fonts.text-preset-4;
 
