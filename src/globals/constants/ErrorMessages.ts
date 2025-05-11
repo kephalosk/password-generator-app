@@ -63,3 +63,13 @@ export const getErrorMessageContainerWidthIs0 = (
 
 export const ERROR_MESSAGE_SLIDER_MOUSE_UPDATE_PREFIX: string =
   "Error handling mouse update event: ";
+
+const ERROR_MESSAGE_CHARACTERLENGTH_LESS_0_PREFIX: string =
+  "Invalid characterLength: ";
+const ERROR_MESSAGE_CHARACTERLENGTH_LESS_0_SUFFIX: string =
+  ". Value must be greater than 0!";
+export const getErrorMessageCharacterLengthLess0 = (
+  characterLength: number,
+): string => {
+  return `${ERROR_MESSAGE_CHARACTERLENGTH_LESS_0_PREFIX}${characterLength}${ERROR_MESSAGE_CHARACTERLENGTH_LESS_0_SUFFIX}`;
+};
