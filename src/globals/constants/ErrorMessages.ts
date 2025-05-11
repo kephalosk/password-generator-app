@@ -75,3 +75,6 @@ export const getErrorMessageCharacterLengthLess0 = (
 };
 
 export const ERROR_MESSAGE_MISSING_OPTION: string = "Options are missing!";
+
+export const ERROR_MESSAGE_PASSWORD_GENERATION_PREFIX: string =
+  "Error handling password generation event: ";
