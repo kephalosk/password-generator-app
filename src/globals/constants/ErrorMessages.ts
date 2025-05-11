@@ -73,3 +73,5 @@ export const getErrorMessageCharacterLengthLess0 = (
 ): string => {
   return `${ERROR_MESSAGE_CHARACTERLENGTH_LESS_0_PREFIX}${characterLength}${ERROR_MESSAGE_CHARACTERLENGTH_LESS_0_SUFFIX}`;
 };
+
+export const ERROR_MESSAGE_MISSING_OPTION: string = "Options are missing!";
