@@ -66,3 +66,9 @@ $arrow-icon-width: functions.to-rem(12px);
 .button:hover .buttonIcon {
   fill: colors.$green-200;
 }
+.button:focus .buttonIcon {
+  fill: colors.$green-200;
+}
+.button:focus-visible .buttonIcon {
+  fill: colors.$green-200;
+}
