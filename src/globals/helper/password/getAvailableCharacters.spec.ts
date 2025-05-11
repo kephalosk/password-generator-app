@@ -22,13 +22,13 @@ describe("getAvailableCharacters function", (): void => {
   });
 
   it("returns string with option based characters", (): void => {
-    const currentOptionsNoSelection: OptionItem[] = OptionItems.map(
+    const currentOptionsAllSelection: OptionItem[] = OptionItems.map(
       (option: OptionItem): OptionItem => {
         return { ...option, isChecked: true };
       },
     );
 
-    const result: string = getAvailableCharacters(currentOptionsNoSelection);
+    const result: string = getAvailableCharacters(currentOptionsAllSelection);
 
     expect(result).toContain(UPPERCASE_LETTERS);
     expect(result).toContain(LOWERCASE_LETTERS);
