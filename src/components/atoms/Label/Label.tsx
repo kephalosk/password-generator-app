@@ -1,9 +1,9 @@
 import "./Label.scss";
 import React, { ReactElement } from "react";
-import useWarnIfEmptyText from "@/hooks/useWarnIfEmptyText.ts";
+import useWarnIfEmptyText from "@/hooks/label/useWarnIfEmptyText.ts";
 import { EMPTY_STRING } from "@/globals/constants/Constants.ts";
 import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
-import useLabelType from "@/hooks/useLabelType.ts";
+import useLabelType from "@/hooks/label/useLabelType.ts";
 
 export interface LabelProps extends React.HTMLProps<HTMLLabelElement> {
   type?: LabelTypeEnum;
