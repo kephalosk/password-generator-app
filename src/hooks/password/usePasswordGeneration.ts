@@ -11,6 +11,7 @@ const usePasswordGeneration = (
   characterLength: number,
 ): PasswordGenerationHook => {
   const generatePassword = (): string => {
+    let password: string = "";
     try {
       const availableCharacters: string =
         getAvailableCharacters(currentOptions);
@@ -20,11 +21,11 @@ const usePasswordGeneration = (
         return "";
       }
 
-      let password: string = "";
       let passwordHasAllOptions: boolean = false;
+      let count = 0;
       while (!passwordHasAllOptions) {
         password = calculatePassword(availableCharacters, characterLength);
-
+        console.log("count", count++);
         if (isEverySelectedOptionIncluded(password, currentOptions)) {
           passwordHasAllOptions = true;
         }
@@ -34,6 +35,7 @@ const usePasswordGeneration = (
     } catch (error) {
       console.error(ERROR_MESSAGE_PASSWORD_GENERATION_PREFIX, error);
     }
+    return password;
   };
 
   return { generatePassword };

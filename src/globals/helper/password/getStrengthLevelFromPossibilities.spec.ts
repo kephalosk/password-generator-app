@@ -1,5 +1,5 @@
 import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
-import getStrengthLevelFromPoints from "@/globals/helper/password/getStrengthLevelFromPoints.ts";
+import getStrengthLevelFromPoints from "@/globals/helper/password/getStrengthLevelFromPossibilities.ts";
 
 describe("getStrengthLevelFromPoints function", (): void => {
   it.each([
