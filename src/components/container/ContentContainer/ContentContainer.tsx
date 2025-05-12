@@ -4,19 +4,26 @@ import OptionContainer from "@/components/container/OptionContainer/OptionContai
 import StrengthContainer from "@/components/container/StrengthContainer/StrengthContainer.tsx";
 import Button from "@/components/atoms/Button/Button.tsx";
 import { BUTTON_TEXT } from "@/globals/constants/Constants.ts";
+import React from "react";
+import { PasswordProcessingHook } from "@/globals/models/types/PasswordProcessingTypes.ts";
+import usePasswordProcessing from "@/hooks/password/usePasswordProcessing.ts";
 
-const ContentContainer = () => {
+export interface ContentContainerProps {
+  propagateValue: (value: string) => void;
+}
+
+const ContentContainer: React.FC<ContentContainerProps> = ({
+  propagateValue,
+}: ContentContainerProps) => {
+  const { handlePasswordGeneration }: PasswordProcessingHook =
+    usePasswordProcessing(propagateValue);
+
   return (
     <div className="contentContainer">
       <SliderContainer />
       <OptionContainer />
       <StrengthContainer />
-      <Button
-        text={BUTTON_TEXT}
-        handleButtonClick={function (): void {
-          console.log("Function not implemented.");
-        }}
-      />
+      <Button text={BUTTON_TEXT} handleButtonClick={handlePasswordGeneration} />
     </div>
   );
 };

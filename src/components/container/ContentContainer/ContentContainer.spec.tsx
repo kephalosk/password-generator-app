@@ -3,9 +3,13 @@ import OptionContainer from "@/components/container/OptionContainer/OptionContai
 import StrengthContainer from "@/components/container/StrengthContainer/StrengthContainer.tsx";
 import Button from "@/components/atoms/Button/Button.tsx";
 import { ReactElement } from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import ContentContainer from "@/components/container/ContentContainer/ContentContainer.tsx";
+import { render, screen } from "@testing-library/react";
+import ContentContainer, {
+  ContentContainerProps,
+} from "@/components/container/ContentContainer/ContentContainer.tsx";
 import { BUTTON_TEXT } from "@/globals/constants/Constants.ts";
+import usePasswordProcessing from "@/hooks/password/usePasswordProcessing.ts";
+import { PasswordProcessingHook } from "@/globals/models/types/PasswordProcessingTypes.ts";
 
 const sliderContainerDataTestId: string = "slider-container";
 jest.mock(
@@ -48,19 +52,47 @@ jest.mock(
     }),
 );
 
+jest.mock(
+  "@/hooks/password/usePasswordProcessing.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(),
+  }),
+);
+
 describe("ContentContainer Component", (): void => {
-  const setup = (): { container: HTMLElement } => {
-    return render(<ContentContainer />);
+  const propagateValueMock: jest.Mock = jest.fn();
+
+  const setup = (
+    propsOverride?: Partial<ContentContainerProps>,
+  ): { container: HTMLElement } => {
+    const defaultProps: ContentContainerProps = {
+      propagateValue: propagateValueMock,
+    };
+
+    const props: ContentContainerProps = { ...defaultProps, ...propsOverride };
+    return render(<ContentContainer {...props} />);
   };
 
-  const contentContainerSelector: string = "contentContainer";
+  const handlePasswordGenerationMock: jest.Mock = jest.fn();
+  const usePasswordProcessingMock: PasswordProcessingHook = {
+    handlePasswordGeneration: handlePasswordGenerationMock,
+  };
 
-  it(`renders div ${contentContainerSelector}`, (): void => {
+  beforeEach((): void => {
+    (usePasswordProcessing as jest.Mock).mockReturnValue(
+      usePasswordProcessingMock,
+    );
+  });
+
+  it(`renders div contentContainer`, (): void => {
     const { container } = setup();
 
-    const element: HTMLElement | null = container.querySelector(
-      `.${contentContainerSelector}`,
-    );
+    const element: HTMLElement | null =
+      container.querySelector(".contentContainer");
 
     expect(element).toBeInTheDocument();
   });
@@ -113,20 +145,10 @@ describe("ContentContainer Component", (): void => {
     );
   });
 
-  it("calls handleButtonClick", (): void => {
-    const handleButtonClickMock: jest.Mock = jest.fn();
+  it("calls hook usePasswordProcessing", (): void => {
     setup();
 
-    const element: HTMLElement = screen.getByTestId(buttonDataTestId);
-    element.onclick = handleButtonClickMock;
-    fireEvent.click(element);
-
-    expect(handleButtonClickMock).toHaveBeenCalledTimes(1);
-    expect(handleButtonClickMock).toHaveBeenCalledWith(
-      expect.objectContaining({
-        type: "click",
-        target: element,
-      }),
-    );
+    expect(usePasswordProcessing).toHaveBeenCalledTimes(1);
+    expect(usePasswordProcessing).toHaveBeenCalledWith(propagateValueMock);
   });
 });
