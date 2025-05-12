@@ -35,5 +35,3 @@ export const FRONTEND_MENTOR_NAME: string = "Frontend Mentor";
 export const FRONTEND_MENTOR_PREFIX: string = "Challenge by ";
 export const FRONTEND_MENTOR_SUFFIX: string = ". Coded by ";
 export const GITHUB_PROFILE_NAME: string = "kephalosk";
-
-export const DOT: string = ".";
