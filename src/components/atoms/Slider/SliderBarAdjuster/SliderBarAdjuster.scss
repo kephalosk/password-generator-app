@@ -1,10 +1,13 @@
 @use '../../../../styles/colors';
 @use '../../../../styles/functions';
 
+$border-thickness: functions.to-rem(2px);
 $slider-bar-adjuster-height: functions.to-rem(28px);
 $slider-bar-adjuster-width: functions.to-rem(28px);
+$transition-duration: 0.2s;
 
 .sliderBarAdjuster {
+  border: $border-thickness solid colors.$grey-200;
   border-radius: 100%;
   background-color: colors.$grey-200;
   height: $slider-bar-adjuster-height;
@@ -18,10 +21,15 @@ $slider-bar-adjuster-width: functions.to-rem(28px);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  transition:
+          background-color $transition-duration ease,
+          border $transition-duration ease;
 }
 .sliderBarAdjuster:hover {
-  background-color: colors.$green-200;
+  border: $border-thickness solid colors.$green-200;
+  background-color: colors.$grey-850;
 }
 .sliderBarAdjuster.clicked {
-  background-color: colors.$green-200;
+  border: $border-thickness solid colors.$green-200;
+  background-color: colors.$grey-850;
 }
