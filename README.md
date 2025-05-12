@@ -28,6 +28,10 @@ Desktop
 
 ![Desktop](ressources/screenshots/desktop.png)
 
+Tablet
+
+![Mobile](ressources/screenshots/tablet.png)
+
 Mobile
 
 ![Mobile](ressources/screenshots/mobile.png)
@@ -73,10 +77,10 @@ Active
 
 ## Built with
 
-- React/Vite/SWC/TypeScript/Jest
+- React/Vite/SWC/TypeScript/Jest/Redux
 - SCSS custom properties
 - Flexbox
-- CSS Grid
+- a11y friendly
 - Mobile-first workflow
 
 ## Author
