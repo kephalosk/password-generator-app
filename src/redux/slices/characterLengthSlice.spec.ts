@@ -3,12 +3,14 @@ import characterLengthReducer, {
   setCharacterLengthValue,
 } from "./characterLengthSlice.ts";
 import {
+  CHARACTER_LENGTH_INIT_VALUE,
   CHARACTER_LENGTH_MAX_VALUE,
-  CHARACTER_LENGTH_MIN_VALUE,
 } from "@/globals/config.ts";
 
 describe("characterLengthSlice", (): void => {
-  const initialState: { value: number } = { value: CHARACTER_LENGTH_MIN_VALUE };
+  const initialState: { value: number } = {
+    value: CHARACTER_LENGTH_INIT_VALUE,
+  };
 
   it("returns the initial state", (): void => {
     expect(characterLengthReducer(undefined, { type: "" })).toEqual(

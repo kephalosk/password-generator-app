@@ -1,19 +1,24 @@
 import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import getStrengthLevelFromPoints from "@/globals/helper/password/getStrengthLevelFromPossibilities.ts";
+import {
+  POSSIBILITIES_LOW_STRENGTH_BORDER,
+  POSSIBILITIES_MEDIUM_STRENGTH_BORDER,
+  POSSIBILITIES_NONE_STRENGTH_BORDER,
+  POSSIBILITIES_WEAK_STRENGTH_BORDER,
+} from "@/globals/config.ts";
 
-describe("getStrengthLevelFromPoints function", (): void => {
+describe("getStrengthLevelFromPossibilities function", (): void => {
   it.each([
-    [SecurityLevelEnum.NONE, 0],
-    [SecurityLevelEnum.WEAK, 1],
-    [SecurityLevelEnum.WEAK, 2],
-    [SecurityLevelEnum.WEAK, 3],
-    [SecurityLevelEnum.LOW, 4],
-    [SecurityLevelEnum.MEDIUM, 5],
-    [SecurityLevelEnum.STRONG, 6],
+    [SecurityLevelEnum.NONE, POSSIBILITIES_NONE_STRENGTH_BORDER],
+    [SecurityLevelEnum.WEAK, POSSIBILITIES_WEAK_STRENGTH_BORDER],
+    [SecurityLevelEnum.LOW, POSSIBILITIES_LOW_STRENGTH_BORDER],
+    [SecurityLevelEnum.MEDIUM, POSSIBILITIES_MEDIUM_STRENGTH_BORDER],
+    [SecurityLevelEnum.STRONG, POSSIBILITIES_MEDIUM_STRENGTH_BORDER + 1n],
   ])(
-    "returns Securitylevel %s for %s points",
-    (level: SecurityLevelEnum, points: number): void => {
-      const result: SecurityLevelEnum = getStrengthLevelFromPoints(points);
+    "returns Securitylevel %s for %s possibilities",
+    (level: SecurityLevelEnum, possibilities: bigint): void => {
+      const result: SecurityLevelEnum =
+        getStrengthLevelFromPoints(possibilities);
 
       expect(result).toEqual(level);
     },
