@@ -7,7 +7,7 @@ import { ReactElement } from "react";
 import { BeamItem, BeamItems } from "@/globals/constants/BeamItems.ts";
 import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
 import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
-import useMarkedBeams from "@/hooks/useMarkedBeams.ts";
+import useMarkedBeams from "@/hooks/beam/useMarkedBeams.ts";
 
 const beamDataTestId: string = "beam";
 jest.mock(
@@ -19,7 +19,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useMarkedBeams.ts",
+  "@/hooks/beam/useMarkedBeams.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;

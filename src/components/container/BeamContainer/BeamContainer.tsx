@@ -3,7 +3,7 @@ import { BeamItem } from "@/globals/constants/BeamItems.ts";
 import React, { ReactElement } from "react";
 import Beam from "@/components/atoms/Beam/Beam.tsx";
 import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
-import useMarkedBeams from "@/hooks/useMarkedBeams.ts";
+import useMarkedBeams from "@/hooks/beam/useMarkedBeams.ts";
 
 export interface BeamContainerProps {
   securityLevel: SecurityLevelEnum;
