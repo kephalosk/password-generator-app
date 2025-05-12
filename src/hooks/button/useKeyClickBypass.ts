@@ -18,7 +18,6 @@ const useKeyClickBypass = (
   );
 
   const handleClick = useCallback((): void => {
-    console.log("hallo");
     if (keyActivatedRef.current) {
       keyActivatedRef.current = false;
       return;
