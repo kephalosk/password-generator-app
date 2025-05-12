@@ -22,10 +22,8 @@ const usePasswordGeneration = (
       }
 
       let passwordHasAllOptions: boolean = false;
-      let count = 0;
       while (!passwordHasAllOptions) {
         password = calculatePassword(availableCharacters, characterLength);
-        console.log("count", count++);
         if (isEverySelectedOptionIncluded(password, currentOptions)) {
           passwordHasAllOptions = true;
         }
