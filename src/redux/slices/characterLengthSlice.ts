@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
+  CHARACTER_LENGTH_INIT_VALUE,
   CHARACTER_LENGTH_MAX_VALUE,
-  CHARACTER_LENGTH_MIN_VALUE,
 } from "@/globals/config.ts";
 
 export interface CharacterLengthState {
@@ -9,7 +9,7 @@ export interface CharacterLengthState {
 }
 
 const initialState: CharacterLengthState = {
-  value: CHARACTER_LENGTH_MIN_VALUE,
+  value: CHARACTER_LENGTH_INIT_VALUE,
 };
 
 const characterLengthSlice = createSlice({

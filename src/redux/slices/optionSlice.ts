@@ -8,10 +8,10 @@ export interface OptionState {
 }
 
 const initialState: OptionState = {
-  uppercase: false,
-  lowercase: false,
-  numbers: false,
-  symbols: false,
+  uppercase: true,
+  lowercase: true,
+  numbers: true,
+  symbols: true,
 };
 
 const optionSlice = createSlice({
