@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
-import useSecurityLevel from "@/hooks/redux/useSecurityLevel.ts";
+import useSecurityLevel from "@/hooks/redux/securityLevel/useSecurityLevel.ts";
 import { render, screen } from "@testing-library/react";
-import useSecurityLabel from "@/hooks/useSecurityLabel.ts";
+import useSecurityLabel from "@/hooks/password/useSecurityLabel.ts";
 import StrengthContainer from "@/components/container/StrengthContainer/StrengthContainer.tsx";
 import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import { SecurityLabelEnum } from "@/globals/models/enums/SecurityLabelEnum.ts";
@@ -33,7 +33,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/redux/useSecurityLevel.ts",
+  "@/hooks/redux/securityLevel/useSecurityLevel.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;
@@ -44,7 +44,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useSecurityLabel.ts",
+  "@/hooks/password/useSecurityLabel.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;
@@ -130,7 +130,7 @@ describe("StrengthContainer Component", (): void => {
     );
   });
 
-  it("renders component CheckboxContainer", (): void => {
+  it("renders component BeamContainer", (): void => {
     setup();
 
     const element: HTMLElement = screen.getByTestId(beamContainerTestId);
@@ -141,5 +141,19 @@ describe("StrengthContainer Component", (): void => {
       { securityLevel: SecurityLevelEnum.STRONG },
       undefined,
     );
+  });
+
+  it("calls hook useSecurityLevel", (): void => {
+    setup();
+
+    expect(useSecurityLevel).toHaveBeenCalledTimes(1);
+    expect(useSecurityLevel).toHaveBeenCalledWith();
+  });
+
+  it("calls hook useSecurityLabel", (): void => {
+    setup();
+
+    expect(useSecurityLabel).toHaveBeenCalledTimes(1);
+    expect(useSecurityLabel).toHaveBeenCalledWith(securityLevel);
   });
 });
