@@ -4,15 +4,15 @@ import {
   ARROW_RIGHT_ICON_ALT_TEXT,
   BUTTON_ARIA_LABEL_PREFIX,
 } from "@/globals/constants/Constants.ts";
-import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
-import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
+import useKeyClickBypass from "@/hooks/button/useKeyClickBypass.ts";
+import useBlurOnPointerUp from "@/hooks/button/useBlurOnPointerUp.ts";
 import {
   ARROW_RIGHT_ICON_D,
   ARROW_RIGHT_ICON_SRC,
 } from "@/globals/constants/Ressources.ts";
 
 jest.mock(
-  "@/hooks/useKeyClickBypass",
+  "@/hooks/button/useKeyClickBypass.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;
@@ -23,7 +23,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useBlurOnPointerUp",
+  "@/hooks/button/useBlurOnPointerUp.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;

@@ -5,8 +5,8 @@ import {
   ARROW_RIGHT_ICON_ALT_TEXT,
   BUTTON_ARIA_LABEL_PREFIX,
 } from "@/globals/constants/Constants.ts";
-import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
-import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
+import useKeyClickBypass from "@/hooks/button/useKeyClickBypass.ts";
+import useBlurOnPointerUp from "@/hooks/button/useBlurOnPointerUp.ts";
 
 export interface ButtonProps {
   text: string;
