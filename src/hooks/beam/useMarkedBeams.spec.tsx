@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { BeamItem } from "@/globals/constants/BeamItems.ts";
-import useMarkedBeams from "@/hooks/useMarkedBeams.ts";
+import useMarkedBeams from "@/hooks/beam/useMarkedBeams.ts";
 import { SecurityLevelEnum } from "@/globals/models/enums/SecurityLevelEnum.ts";
 import { render, screen } from "@testing-library/react";
 import { BeamColorEnum } from "@/globals/models/enums/BeamColorEnum.ts";
