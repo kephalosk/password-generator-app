@@ -13,7 +13,7 @@ import {
   EMPTY_COPY_LABEL_TEXT,
 } from "@/globals/constants/Constants.ts";
 import React, { ReactElement } from "react";
-import useLabelType from "@/hooks/useLabelType.ts";
+import useLabelType from "@/hooks/label/useLabelType.ts";
 import { render, screen } from "@testing-library/react";
 
 describe("useLabelType hook", (): void => {
