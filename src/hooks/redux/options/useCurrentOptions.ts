@@ -3,6 +3,7 @@ import { OptionItem, OptionItems } from "@/globals/constants/OptionItems.ts";
 import { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { OptionEnum } from "@/globals/models/enums/OptionEnum.ts";
+import { CurentOptionsHook } from "@/globals/models/types/CurrentOptionsTypes.ts";
 
 export const selectUppercaseValue = (state: RootState) =>
   state.options.uppercase;
@@ -11,7 +12,7 @@ export const selectLowercaseValue = (state: RootState) =>
 export const selectNumbersValue = (state: RootState) => state.options.numbers;
 export const selectSymbolsValue = (state: RootState) => state.options.symbols;
 
-const useCurrentOptions = (): { currentOptions: OptionItem[] } => {
+const useCurrentOptions = (): CurentOptionsHook => {
   const currentOptions: OptionItem[] = useMemo(() => {
     return [...OptionItems];
   }, []);

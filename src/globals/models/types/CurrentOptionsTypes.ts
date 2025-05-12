@@ -1,6 +1,3 @@
-import React from "react";
+import { OptionItem } from "@/globals/constants/OptionItems.ts";
 
-export type KeyClickBypassHook = {
-  handleKeyDown: (event: React.KeyboardEvent<HTMLElement>) => void;
-  handleClick: () => void;
-};
+export type CurentOptionsHook = { currentOptions: OptionItem[] };
