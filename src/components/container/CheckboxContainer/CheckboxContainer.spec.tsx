@@ -7,8 +7,8 @@ import CheckboxContainer, {
   CheckboxContainerProps,
 } from "@/components/container/CheckboxContainer/CheckboxContainer.tsx";
 import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
-import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
-import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
+import useKeyClickBypass from "@/hooks/button/useKeyClickBypass.ts";
+import useBlurOnPointerUp from "@/hooks/button/useBlurOnPointerUp.ts";
 import { KeyClickBypassHook } from "@/globals/models/types/KeyClickBypassTypes.ts";
 import { ReactNamesEnum } from "@/globals/models/enums/ReactNamesEnum.ts";
 
@@ -31,7 +31,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useKeyClickBypass.ts",
+  "@/hooks/button/useKeyClickBypass.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;
@@ -42,7 +42,7 @@ jest.mock(
 );
 
 jest.mock(
-  "@/hooks/useBlurOnPointerUp.ts",
+  "@/hooks/button/useBlurOnPointerUp.ts",
   (): {
     __esModule: boolean;
     default: jest.Mock;

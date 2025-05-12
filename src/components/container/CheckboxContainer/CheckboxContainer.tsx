@@ -4,8 +4,8 @@ import Checkbox from "@/components/atoms/Checkbox/Checkbox.tsx";
 import Label from "@/components/atoms/Label/Label.tsx";
 import { LabelTypeEnum } from "@/globals/models/enums/LabelTypeEnum.ts";
 import React, { useRef } from "react";
-import useKeyClickBypass from "@/hooks/useKeyClickBypass.ts";
-import useBlurOnPointerUp from "@/hooks/useBlurOnPointerUp.ts";
+import useKeyClickBypass from "@/hooks/button/useKeyClickBypass.ts";
+import useBlurOnPointerUp from "@/hooks/button/useBlurOnPointerUp.ts";
 
 export interface CheckboxContainerProps {
   option: OptionEnum;
