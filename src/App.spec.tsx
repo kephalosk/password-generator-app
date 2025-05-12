@@ -6,6 +6,8 @@ import Footer from "@/components/atoms/Footer/Footer.tsx";
 import { ReactElement } from "react";
 import { render, screen } from "@testing-library/react";
 import App from "@/App.tsx";
+import usePasswordChange from "@/hooks/password/usePasswordChange.ts";
+import { PasswordChangeHook } from "@/globals/models/types/PasswordChangeTypes.ts";
 
 const headlineDataTestId: string = "headline";
 jest.mock(
@@ -43,19 +45,37 @@ jest.mock(
     }),
 );
 
+jest.mock(
+  "@/hooks/password/usePasswordChange.ts",
+  (): {
+    __esModule: boolean;
+    default: jest.Mock;
+  } => ({
+    __esModule: true,
+    default: jest.fn(),
+  }),
+);
+
 describe("App Component", (): void => {
   const setup = (): { container: HTMLElement } => {
     return render(<App />);
   };
 
-  const appSelector: string = "app";
+  const password: string = "password";
+  const handlePasswordChangeMock: jest.Mock = jest.fn();
+  const usePasswordChangeMock: PasswordChangeHook = {
+    password,
+    handlePasswordChange: handlePasswordChangeMock,
+  };
 
-  it(`renders div ${appSelector}`, (): void => {
+  beforeEach((): void => {
+    (usePasswordChange as jest.Mock).mockReturnValue(usePasswordChangeMock);
+  });
+
+  it(`renders div app`, (): void => {
     const { container } = setup();
 
-    const element: HTMLElement | null = container.querySelector(
-      `.${appSelector}`,
-    );
+    const element: HTMLElement | null = container.querySelector(".app");
 
     expect(element).toBeInTheDocument();
   });
@@ -79,7 +99,7 @@ describe("App Component", (): void => {
 
     expect(element).toBeInTheDocument();
     expect(PasswordContainer).toHaveBeenCalledTimes(1);
-    expect(PasswordContainer).toHaveBeenCalledWith({}, undefined);
+    expect(PasswordContainer).toHaveBeenCalledWith({ password }, undefined);
   });
 
   it("renders component ContentContainer", (): void => {
@@ -89,7 +109,10 @@ describe("App Component", (): void => {
 
     expect(element).toBeInTheDocument();
     expect(ContentContainer).toHaveBeenCalledTimes(1);
-    expect(ContentContainer).toHaveBeenCalledWith({}, undefined);
+    expect(ContentContainer).toHaveBeenCalledWith(
+      { propagateValue: handlePasswordChangeMock },
+      undefined,
+    );
   });
 
   it(`renders component Footer`, (): void => {
@@ -100,5 +123,12 @@ describe("App Component", (): void => {
     expect(element).toBeInTheDocument();
     expect(Footer).toHaveBeenCalledTimes(1);
     expect(Footer).toHaveBeenCalledWith({}, undefined);
+  });
+
+  it(`calls hook usePasswordChange`, (): void => {
+    setup();
+
+    expect(usePasswordChange).toHaveBeenCalledTimes(1);
+    expect(usePasswordChange).toHaveBeenCalledWith();
   });
 });
