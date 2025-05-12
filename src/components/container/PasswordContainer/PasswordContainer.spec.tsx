@@ -204,6 +204,7 @@ describe("PasswordContainer component", (): void => {
     );
 
     expect(element).toBeInTheDocument();
+    expect(element).toHaveAttribute("role", "button");
     expect(element).toHaveAttribute("aria-label", COPY_ICON_ALT_TEXT);
     expect(element).toHaveAttribute("aria-hidden", "false");
     expect(element).toHaveAttribute("tabIndex", "0");

@@ -41,6 +41,7 @@ const PasswordContainer = ({ password }: PasswordContainerProps) => {
       </div>
       <div
         ref={divRef}
+        role="button"
         className="passwordContainerIconWrapper"
         tabIndex={0}
         onClick={handleClick}
